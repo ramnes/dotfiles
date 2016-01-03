@@ -1,0 +1,28 @@
+[global_config]
+  title_inactive_fg_color = "#ffffff"
+  borderless = True
+[keybindings]
+  go_left = None
+  go_down = None
+  go_right = None
+[profiles]
+  [[default]]
+    use_system_font = False
+    background_darkness = 0.98
+    background_type = transparent
+    scrollbar_position = hidden
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    cursor_shape = ibeam
+    font = DejaVu Sans Mono 9
+    background_color = "#262626"
+    cursor_blink = False
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
