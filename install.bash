@@ -1,3 +1,9 @@
-cd $(dirname $0)
+function install {
+    origin=$1
+    destination=$2
+    test -e $destination && echo $destination | xargs -p rm -rf
+    test -e $destination || ln -s $origin $destination
+}
 
-ln -is $(pwd)/bash/init.bash ~/.bashrc
+cd $(dirname $0)
+install $(pwd)/bash/init.bash ~/.bashrc
