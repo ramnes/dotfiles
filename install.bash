@@ -7,3 +7,4 @@ function install {
 
 cd $(dirname $0)
 install $(pwd)/bash/init.bash ~/.bashrc
+install $(pwd)/emacs ~/.emacs.d
