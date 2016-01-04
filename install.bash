@@ -14,10 +14,10 @@ function install {
 
 cd $(dirname $0)
 install emacs ~/.emacs.d
-install htop ~/.config/htop
 install misc/bashrc ~/.bashrc
 install misc/colordiffrc ~/.colordiffrc
 install misc/git-prompt.sh ~/.git-prompt.sh
+install misc/htoprc ~/.config/htop/htoprc
+install misc/terminator ~/.config/terminator/config
 install misc/xprofile ~/.xprofile
 install qtile ~/.config/qtile
-install terminator ~/.config/terminator
