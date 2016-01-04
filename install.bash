@@ -1,9 +1,13 @@
+function clean {
+    echo $@ | xargs -p rm -rf
+}
+
 function install {
     origin=$(pwd)/$1
     destination=$2
 
     test $origin == $destination && return
-    test -e $destination && echo $destination | xargs -p rm -rf
+    test -e $destination && clean $destination
     test -e $destination || ln -vs $origin $destination
 }
 
