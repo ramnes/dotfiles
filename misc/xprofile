@@ -1,0 +1,6 @@
+feh --bg-scale ~/.background.jpg &
+compton -cG -r10 -o.1 -b &
+xsetroot -cursor_name left_ptr &
+redshift -l 48.8:2.32 -t 5500:4500 &
+xset r rate 200 50 &
+setxkbmap us intl -option caps:super &

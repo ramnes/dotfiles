@@ -12,5 +12,6 @@ install bash/init.bash ~/.bashrc
 install emacs ~/.emacs.d
 install htop ~/.config/htop
 install misc/colordiffrc ~/.colordiffrc
+install misc/xprofile ~/.xprofile
 install qtile ~/.config/qtile
 install terminator ~/.config/terminator
