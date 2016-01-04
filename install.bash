@@ -4,7 +4,7 @@ function install {
 
     test $origin == $destination && return
     test -e $destination && echo $destination | xargs -p rm -rf
-    test -e $destination || ln -s $origin $destination
+    test -e $destination || ln -vs $origin $destination
 }
 
 cd $(dirname $0)
