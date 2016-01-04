@@ -9,8 +9,8 @@ function install {
 
 cd $(dirname $0)
 install bash/init.bash ~/.bashrc
-install colordiff/config ~/.colordiffrc
 install emacs ~/.emacs.d
 install htop ~/.config/htop
+install misc/colordiffrc ~/.colordiffrc
 install qtile ~/.config/qtile
 install terminator ~/.config/terminator
