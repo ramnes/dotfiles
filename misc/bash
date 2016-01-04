@@ -38,4 +38,4 @@ alias reactivate='deactivate && activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
 
-source .git-prompt.sh
+source ~/.git-prompt.sh
