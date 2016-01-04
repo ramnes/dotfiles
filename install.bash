@@ -12,10 +12,11 @@ function install {
 }
 
 cd $(dirname $0)
-install bash/init.bash ~/.bashrc
 install emacs ~/.emacs.d
 install htop ~/.config/htop
+install misc/bashrc ~/.bashrc
 install misc/colordiffrc ~/.colordiffrc
+install misc/git-prompt.sh ~/.git-prompt.sh
 install misc/xprofile ~/.xprofile
 install qtile ~/.config/qtile
 install terminator ~/.config/terminator
