@@ -1,11 +1,16 @@
 function install {
-    origin=$1
+    origin=$(pwd)/$1
     destination=$2
+
+    test $origin == $destination && return
     test -e $destination && echo $destination | xargs -p rm -rf
     test -e $destination || ln -s $origin $destination
 }
 
 cd $(dirname $0)
-install $(pwd)/bash/init.bash ~/.bashrc
-install $(pwd)/emacs ~/.emacs.d
-install $(pwd)/colordiff/config ~/.colordiffrc
+install bash/init.bash ~/.bashrc
+install colordiff/config ~/.colordiffrc
+install emacs ~/.emacs.d
+install htop ~/.config/htop
+install qtile ~/.config/qtile
+install terminator ~/.config/terminator
