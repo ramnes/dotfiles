@@ -7,7 +7,7 @@ function install {
     destination=$2
 
     test $origin == $destination && return
-    test -e $destination && clean $destination
+    test -e $destination || test -L $destination && clean $destination
     test -e $destination || ln -vs $origin $destination
 }
 
