@@ -14,6 +14,7 @@ function install {
 
 cd $(dirname $0)
 install emacs ~/.emacs.d
+install misc/background.jpg ~/.background.jpg
 install misc/bash ~/.bashrc
 install misc/colordiff ~/.colordiffrc
 install misc/git-prompt.sh ~/.git-prompt.sh
