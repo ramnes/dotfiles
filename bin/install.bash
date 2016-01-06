@@ -21,4 +21,5 @@ install misc/background.jpg ~/.background.jpg
 install misc/git-prompt.sh ~/.git-prompt.sh
 install qtile ~/.config/qtile
 install terminator ~/.config/terminator/config
+install urxvt ~/.Xresources
 install xprofile ~/.xprofile

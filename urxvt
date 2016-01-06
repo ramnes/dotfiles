@@ -1,0 +1,42 @@
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/uzbl-browser
+URxvt.matcher.button: 1
+
+URxvt.cursorBlink: true
+URxvt.scrollBar: false
+
+URxvt.font: xft:DejaVu Sans Mono:pixelsize=11
+URxvt.boldFont: xft:DejaVu Sans Mono:style=Bold:pixelsize=11
+
+URxvt.depth: 32
+URxvt.foreground: #FFFFFF
+URxvt.background: [95]#333333
+
+URxvt.cursorColor: #888888
+URxvt.cursorColor2: #FFFFFF
+
+! dark black red green yellow blue magenta cyan white
+URxvt.color0: #000000
+URxvt.color1: #AA0000
+URxvt.color2: #00AA00
+URxvt.color3: #AA5500
+URxvt.color4: #5555AA
+URxvt.color5: #AA00AA
+URxvt.color6: #00AAAA
+URxvt.color7: #AAAAAA
+
+! light black red green yellow blue magenta cyan white
+URxvt.color8: #555555
+URxvt.color9: #FF5555
+URxvt.color10: #55FF55
+URxvt.color11: #FFFF55
+URxvt.color12: #5555FF
+URxvt.color13: #FF55FF
+URxvt.color14: #55FFFF
+URxvt.color15: #FFFFFF
+
+Xft.antialias: true
+Xft.dpi: 96
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: none
