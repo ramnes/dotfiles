@@ -7,15 +7,16 @@
   go_right = None
 [profiles]
   [[default]]
+    scrollbar_position = hidden
     use_system_font = False
     background_darkness = 0.98
     background_type = transparent
-    scrollbar_position = hidden
+    background_image = None
+    cursor_color = "#666666"
     foreground_color = "#ffffff"
     show_titlebar = False
-    cursor_shape = ibeam
-    font = DejaVu Sans Mono 9
-    background_color = "#262626"
+    font = DejaVu Sans Mono 8
+    background_color = "#333333"
     cursor_blink = False
     scrollback_infinite = True
 [layouts]
@@ -26,3 +27,4 @@
     [[[window0]]]
       type = Window
       parent = ""
+[plugins]

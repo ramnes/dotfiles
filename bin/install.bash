@@ -12,13 +12,13 @@ function install {
     test -e $destination || ln -vs $origin $destination
 }
 
-cd $(dirname $0)
+cd $(dirname $0)/..
+install bash ~/.bashrc
+install colordiff ~/.colordiffrc
 install emacs ~/.emacs.d
+install htop ~/.config/htop/htoprc
 install misc/background.jpg ~/.background.jpg
-install misc/bash ~/.bashrc
-install misc/colordiff ~/.colordiffrc
 install misc/git-prompt.sh ~/.git-prompt.sh
-install misc/htop ~/.config/htop/htoprc
-install misc/terminator ~/.config/terminator/config
-install misc/xprofile ~/.xprofile
 install qtile ~/.config/qtile
+install terminator ~/.config/terminator/config
+install xprofile ~/.xprofile

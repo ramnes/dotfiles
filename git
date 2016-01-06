@@ -15,7 +15,7 @@
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
         rh = !git reset --hard origin/`git symbolic-ref --short HEAD`
         st = fetch --prune origin +refs/tags/*:refs/tags/*
-        sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`        
+        sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [pager]
         diff = true
         log = true
