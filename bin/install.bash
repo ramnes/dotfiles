@@ -7,6 +7,7 @@ function install {
     destination=$2
 
     test $origin == $destination && return
+    test -L $destination && test $origin == $(realpath $destination) && return
     test -e $(dirname $destination) || mkdir -vp $(dirname $destination)
     test -e $destination || test -L $destination && clean $destination
     test -e $destination || ln -vs $origin $destination
