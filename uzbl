@@ -1,0 +1,114 @@
+# Default locations
+set cache_home = @(echo $XDG_CACHE_HOME)@
+set config_home = @(echo $XDG_CONFIG_HOME)@
+set data_home = @(echo $XDG_DATA_HOME)@
+set prefix = @(echo $PREFIX)@
+set scripts_dir = @data_home/uzbl:@prefix/share/uzbl/examples/data:scripts
+
+# Default variables
+set default_mode = insert
+set fifo_dir = /tmp
+set shell_cmd = bash -c
+set socket_dir = /tmp
+set uri = https://www.google.com/
+
+# Lambdas
+set bind = request MODE_BIND
+set ignore = request IGNORE_KEY
+set modmap = request MODMAP
+set mset = request MODE_CONFIG
+set on_event = request ON_EVENT
+set reload-config = sh "sed '/^# === Post-load misc commands/,$d' \"$UZBL_CONFIG\" | grep -v 'set uri'> \"$UZBL_FIFO\""
+
+# Modes
+@mset insert forward_keys = 1
+@mset insert keycmd_events = 0
+@mset insert modcmd_updates = 1
+@mset insert mode_indicator = I
+@mset stack forward_keys = 0
+@mset stack keycmd_events = 1
+@mset stack modcmd_updates = 0
+@mset stack mode_indicator = S
+
+# Events
+@on_event NEW_WINDOW sh 'uzbl-browser ${1:+-u "$1"}' %r
+
+# Keys
+@modmap <Mod1> <Meta>
+@modmap <space> <Space>
+@ignore <Shift>
+@ignore <Space>
+@ignore <Mod4>
+
+# Uzbl bindings
+@bind global <BackSpace> = event KEYCMD_BACKSPACE
+@bind global <Left> = event SET_CURSOR_POS -
+@bind global <Return> = event KEYCMD_EXEC_CURRENT
+@bind global <Right> = event SET_CURSOR_POS +
+@bind global <Ctrl>w = event KEYCMD_STRIP_WORD
+@bind global <Ctrl>g = chain "search_clear" "event KEYCMD_CLEAR" "set mode = insert"
+@bind insert <Ctrl>xc = exit
+@bind insert <Ctrl>xr = @reload-config
+@bind insert <Meta>x<M-x:>_ = %s
+
+# Navigation bindings
+@bind insert <Ctrl><Left>x = back
+@bind insert <Ctrl><Right>x = forward
+@bind insert <Ctrl>f<Google:>_ = uri https://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
+@bind insert <Ctrl>l<Lucky:>_ = uri https://www.google.com/search?q=\@<encodeURIComponent(%r)>\@&btnI
+@bind insert <Ctrl>u<Go to URI:>_ = uri %s
+@bind insert <Meta>u<Go to URI:\@uri>_ = uri %s
+@bind insert <Ctrl>r = reload
+@bind insert <Ctrl>s<Search:>_ = search %s
+@bind insert <Meta><Return> = event NEW_WINDOW \@uri
+
+# Websites bindings
+@bind insert <Ctrl>cg<Gist:>_ = uri https://gist.github.com/search?q=user%3Aramnes+\@<encodeURIComponent(%r)>\@
+@bind insert <Ctrl>ch<GitHub:>_ = uri https://www.github.com/search?q=\@<encodeURIComponent(%r)>\@
+@bind insert <Ctrl>cw<Wikipedia:>_ = uri https://en.wikipedia.org/w/index.php?title=Special:Search&search=\@<encodeURIComponent(%r)>\@&go=Go
+@bind insert <Ctrl>cy<Youtube:>_ = uri https://youtube.com/results?q=\@<encodeURIComponent(%r)>\@
+@bind insert <Ctrl>ci<Google Image:>_ = uri https://www.google.fr/search?q=\@<encodeURIComponent(%r)>\@&tbm=isch
+
+# Mouse bindings
+@bind insert <Button2>  = sh 'if [ "$1" ]; then echo "event NEW_WINDOW $1" > "$UZBL_FIFO"; else echo "uri $(xsel -o | sed s/\\\@/%40/g)" > "$UZBL_FIFO"; fi' '\@SELECTED_URI'
+@bind insert <Button8> = back
+@bind insert <Button9> = forward
+
+# Random bindings
+@bind insert <Meta>t = sh 'wget -O - "http://tinyurl.com/api-create.php?url=\@uri" | xsel'
+@bind insert <Meta>w = sh 'echo "\@uri" | xsel -i'
+@bind insert <Ctrl>y = sh 'echo "uri $(xsel -o | sed s/\\\@/%40/g)" > "$UZBL_FIFO"'
+
+# Appearance
+set show_status = 1
+set status_background = \#3a3a3a
+set status_top = 0
+
+set mode_style = weight="light" foreground="#87D7FF"
+set keycmd_style = weight="light" foreground="white"
+set modcmd_style = weight="bold" foreground="white"
+set prompt_style = weight="bold" foreground="#87D7FF"
+set cursor_style = underline="single"
+set completion_style = foreground="green"
+set hint_style = weight="bold"
+
+set mode_section = <span \@mode_style>-\@[\@mode_indicator]\@-</span>
+set modcmd_section = <span \@modcmd_style>\@modcmd</span>
+set keycmd_section = <span \@prompt_style>\@[\@keycmd_prompt]\@ </span><span \@keycmd_style>\@keycmd</span><span \@completion_style>\@completion_list</span>
+set progress_section = <span foreground="#87D7FF">\@[\@progress.output]\@</span>
+set scroll_section = <span foreground="#606060">\@[\@scroll_message]\@</span>
+set uri_section = <span weight="bold" foreground="#87D7FF">\@[\@uri]\@</span>
+set name_section = <span foreground="khaki">\@[\@NAME]\@</span>
+set selected_section = <span foreground="#606060">\@[\@SELECTED_URI]\@</span>
+set download_section = <span foreground="white">\@downloads</span>
+
+set status_format = <span font_family="monospace">@mode_section @modcmd_section @keycmd_section</span>
+set status_format_right = <span font_family="monospace">@uri_section @progress_section</span>
+
+set title_format_long = \@TITLE - Uzbl
+set title_format_short = @title_format_long
+set progress.format = [%c]
+
+# Come to the dark side, we have cookies
+sync_spawn_exec @scripts_dir/load_cookies.sh
+sync_spawn_exec @scripts_dir/load_cookies.sh @data_home/uzbl/session-cookies.txt

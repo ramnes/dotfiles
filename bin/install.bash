@@ -25,4 +25,5 @@ install misc/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install qtile ~/.config/qtile
 install terminator ~/.config/terminator/config
 install urxvt ~/.Xresources
+install uzbl ~/.config/uzbl/config
 install xprofile ~/.xprofile
