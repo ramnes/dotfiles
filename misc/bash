@@ -3,7 +3,9 @@ at="\[\e[38;5;153m\]@"
 host="\[\e[37;1m\]\h"
 bg="\[\e[38;5;117m\]:\j"
 path="\[\e[38;5;153m\]\w"
-git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')\[\e[0m\]"
+git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
+
+test -f ~/.git-prompt.sh && source ~/.git-prompt.sh || git=""
 
 export EDITOR=emacs
 export GIT_EDITOR=emacs
@@ -11,7 +13,7 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export PATH="~/.local/bin:/usr/local/heroku/bin:$PATH"
-export PS1="$user$at$host $bg $path $git"
+export PS1="$user$at$host $bg $path $git\[\e[0m\]"
 export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
 
@@ -37,5 +39,3 @@ alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate && activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
-
-source ~/.git-prompt.sh
