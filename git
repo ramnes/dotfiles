@@ -6,6 +6,7 @@
 [push]
         default = current
         followTags = true
+        recurseSubmodules = check
 [alias]
         dc = !GIT_PAGER=cat git diff
         df = diff HEAD
