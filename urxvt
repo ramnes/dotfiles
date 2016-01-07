@@ -16,24 +16,24 @@ URxvt.cursorColor: #888888
 URxvt.cursorColor2: #FFFFFF
 
 ! dark black red green yellow blue magenta cyan white
-URxvt.color0: #000000
-URxvt.color1: #AA0000
-URxvt.color2: #00AA00
-URxvt.color3: #AA5500
-URxvt.color4: #5555AA
-URxvt.color5: #AA00AA
-URxvt.color6: #00AAAA
-URxvt.color7: #AAAAAA
+URxvt.color0: #2e3436
+URxvt.color1: #cc0000
+URxvt.color2: #4e9a06
+URxvt.color3: #c4a000
+URxvt.color4: #3465a4
+URxvt.color5: #75507b
+URxvt.color6: #06989a
+URxvt.color7: #d3d7cf
 
 ! light black red green yellow blue magenta cyan white
-URxvt.color8: #555555
-URxvt.color9: #FF5555
-URxvt.color10: #55FF55
-URxvt.color11: #FFFF55
-URxvt.color12: #5555FF
-URxvt.color13: #FF55FF
-URxvt.color14: #55FFFF
-URxvt.color15: #FFFFFF
+URxvt.color8: #555753
+URxvt.color9: #ef2929
+URxvt.color10: #8ae234
+URxvt.color11: #fce94f
+URxvt.color12: #729fcf
+URxvt.color13: #ad7fa8
+URxvt.color14: #34e2e2
+URxvt.color15: #ffffff
 
 Xft.antialias: true
 Xft.dpi: 96
