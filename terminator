@@ -5,6 +5,7 @@
   go_left = None
   go_down = None
   go_right = None
+  go_up = None
 [profiles]
   [[default]]
     scrollbar_position = hidden
