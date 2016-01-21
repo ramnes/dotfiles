@@ -19,6 +19,7 @@ set modmap = request MODMAP
 set mset = request MODE_CONFIG
 set on_event = request ON_EVENT
 set reload-config = sh "sed '/^# === Post-load misc commands/,$d' \"$UZBL_CONFIG\" | grep -v 'set uri'> \"$UZBL_FIFO\""
+set translate = uri http://www.google.com/translate_c?u=\@uri
 
 # Modes
 @mset insert forward_keys = 1
@@ -59,6 +60,7 @@ set reload-config = sh "sed '/^# === Post-load misc commands/,$d' \"$UZBL_CONFIG
 @bind insert <Ctrl>u<Go to URI:>_ = uri %s
 @bind insert <Meta>u<Go to URI:\@uri>_ = uri %s
 @bind insert <Ctrl>r = reload
+@bind insert <Ctrl>t = @translate
 @bind insert <Ctrl>s<Search:>_ = search %s
 @bind insert <Meta><Return> = event NEW_WINDOW \@uri
 
