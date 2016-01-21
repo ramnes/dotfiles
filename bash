@@ -40,3 +40,5 @@ alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate && activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
+
+test -f ~/.bash_aliases && source ~/.bash_aliases
