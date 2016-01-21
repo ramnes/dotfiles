@@ -112,3 +112,7 @@ set progress.format = [%c]
 # Come to the dark side, we have cookies
 sync_spawn_exec @scripts_dir/load_cookies.sh
 sync_spawn_exec @scripts_dir/load_cookies.sh @data_home/uzbl/session-cookies.txt
+
+# Spell check
+set enable_spellcheck = 1
+set spellcheck_languages = en_US,fr_FR
