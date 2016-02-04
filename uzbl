@@ -8,6 +8,7 @@ set scripts_dir = @data_home/uzbl:@prefix/share/uzbl/examples/data:scripts
 # Default variables
 set default_mode = insert
 set fifo_dir = /tmp
+set proxy_url = @(echo $UZBL_PROXY)@
 set shell_cmd = bash -c
 set socket_dir = /tmp
 set uri = https://www.google.com/
