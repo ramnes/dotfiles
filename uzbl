@@ -57,7 +57,9 @@ set translate = uri http://www.google.com/translate_c?u=\@uri
 @bind insert <Ctrl><Left>x = back
 @bind insert <Ctrl><Right>x = forward
 @bind insert <Ctrl>f<Google:>_ = uri https://www.google.com/search?q=\@<encodeURIComponent(%r)>\@
+@bind insert <Meta>f = sh 'echo "uri https://www.google.com/search?q=$(xsel -o | sed s/\\\@/%40/g)" > "$UZBL_FIFO"'
 @bind insert <Ctrl>l<Lucky:>_ = uri https://www.google.com/search?q=\@<encodeURIComponent(%r)>\@&btnI
+@bind insert <Meta>l = sh 'echo "uri https://www.google.com/search?q=$(xsel -o | sed s/\\\@/%40/g)&btnI" > "$UZBL_FIFO"'
 @bind insert <Ctrl>u<Go to URI:>_ = uri %s
 @bind insert <Meta>u<Go to URI:\@uri>_ = uri %s
 @bind insert <Ctrl>r = reload
