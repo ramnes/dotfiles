@@ -1,4 +1,4 @@
 cd $(dirname $0)/..
 cp -i git ~/.gitconfig
-bash install.bash
+bash bin/install.bash
 source ~/.bashrc
