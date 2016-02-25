@@ -3,6 +3,7 @@ URxvt.url-launcher: /usr/bin/uzbl-browser
 URxvt.matcher.button: 1
 
 URxvt.cursorBlink: true
+URxvt.saveLines: 99999
 URxvt.scrollBar: false
 
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=11
