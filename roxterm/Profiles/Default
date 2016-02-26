@@ -1,9 +1,10 @@
 [roxterm profile]
 scrollback_lines=100000
 background_type=2
-saturation=0.097525
+saturation=0.95
 always_show_tabs=0
 audible_bell=0
 scrollbar_pos=0
 hide_menubar=1
 font=DejaVu Sans Mono 8
+colour_scheme=Tango
