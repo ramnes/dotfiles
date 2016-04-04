@@ -17,6 +17,7 @@ cd $(dirname $0)/..
 install bash ~/.bashrc
 install colordiff ~/.colordiffrc
 install emacs ~/.emacs.d
+install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
 install misc/background.jpg ~/.background.jpg
