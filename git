@@ -1,8 +1,8 @@
 [core]
-	editor = emacs
+        editor = emacs
 [user]
-	name = ramnes
-	email = contact@ramnes.eu
+        name = ramnes
+        email = contact@ramnes.eu
 [push]
         default = current
         followTags = true
