@@ -1,3 +1,6 @@
+stty ixany
+stty ixoff -ixon
+
 user="\[\e[37;1m\]\u"
 at="\[\e[38;5;153m\]@"
 host="\[\e[37;1m\]\h"
