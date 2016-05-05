@@ -1,6 +1,6 @@
 [submodule "emacs"]
 	path = emacs
-	url = git@github.com:ramnes/.emacs.d.git
+	url = https://github.com/ramnes/.emacs.d.git
 [submodule "qtile"]
 	path = qtile
-	url = git@github.com:ramnes/qtile-config.git
+	url = https://github.com/ramnes/qtile-config.git
