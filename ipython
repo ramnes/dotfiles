@@ -9,7 +9,21 @@ ipython_version = IPython.__version__
 c = get_config()
 c.TerminalInteractiveShell.separate_in = ''
 c.TerminalInteractiveShell.banner1 = banner.format(ipython_version, python_version)
-c.PromptManager.out_template = ''
-c.PromptManager.in2_template = '... '
-c.PromptManager.justify = False
-c.PromptManager.in_template = '>>> '
+
+if int(ipython_version.split(".")[0]) >= 5:
+    from IPython.terminal.prompts import Prompts, Token
+
+    class MyPrompts(Prompts):
+
+        def in_prompt_tokens(self, cli=None):
+            return [(Token.Prompt, '>>> ')]
+
+        def out_prompt_tokens(self):
+            return ''
+
+    c.TerminalInteractiveShell.prompts_class = MyPrompts
+else:
+    c.PromptManager.out_template = ''
+    c.PromptManager.in2_template = '... '
+    c.PromptManager.justify = False
+    c.PromptManager.in_template = '>>> '
