@@ -14,14 +14,14 @@ function install {
 }
 
 cd $(dirname $0)/..
-install bash ~/.bashrc
+install bash/config.bash ~/.bashrc
+install bash/profile.bash ~/.bash_profile
 install colordiff ~/.colordiffrc
 install emacs ~/.emacs.d
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
 install misc/background.jpg ~/.background.jpg
-install misc/bash_profile.bash ~/.bash_profile
 install misc/git-prompt.sh ~/.git-prompt.sh
 install misc/mouserate.py ~/.local/bin/mouserate
 install misc/spotify-dbus.bash ~/.local/bin/spotify-dbus
