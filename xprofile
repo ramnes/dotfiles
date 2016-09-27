@@ -1,7 +1,7 @@
 xset r rate 200 50 &
 xsetroot -cursor_name left_ptr &
 xrandr --dpi 96x96 &
-setxkbmap us intl -option caps:super &
+setxkbmap us intl -option compose:lwin ctrl:swap_lwin_lctl caps:ctrl_modifier &
 feh --bg-tile ~/.background.jpg &
 compton -cG -r10 -o.1 -b &
 redshift -l 48.8:2.32 -t 5500:4500 &
