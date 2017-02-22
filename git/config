@@ -30,5 +30,16 @@
 [status]
 	showUntrackedFiles = all
 [pager]
-        diff = true
-        log = true
+        diff = diff-highlight | less
+        log = diff-highlight | less
+        show = diff-highlight | less
+[color "diff"]
+        old = "red bold"
+        new = "green bold"
+        whitespace = "red reverse"
+        meta = yellow
+[color "diff-highlight"]
+        oldNormal = "red bold dim"
+        oldHighlight = "red bold 52"
+        newNormal = "green bold dim"
+        newHighlight = "green bold 22"
