@@ -4,10 +4,6 @@
 [user]
         name = ramnes
         email = contact@ramnes.eu
-[push]
-        default = current
-        followTags = true
-        recurseSubmodules = check
 [alias]
         dc = !GIT_PAGER=cat git diff
         df = diff HEAD
@@ -18,8 +14,12 @@
         rh = !git reset --hard origin/`git symbolic-ref --short HEAD`
         st = fetch --prune origin +refs/tags/*:refs/tags/*
         sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+[push]
+        default = current
+        followTags = true
+        recurseSubmodules = check
+[tag]
+        sort = version:refname
 [pager]
         diff = true
         log = true
-[tag]
-        sort = version:refname
