@@ -10,7 +10,7 @@
         dfc = !GIT_PAGER=cat git df
         ds = diff --cached
         dsc = !GIT_PAGER=cat git ds
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
         rh = !git reset --hard origin/`git symbolic-ref --short HEAD`
         st = fetch --prune origin +refs/tags/*:refs/tags/*
         sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
