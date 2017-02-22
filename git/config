@@ -18,8 +18,17 @@
         default = current
         followTags = true
         recurseSubmodules = check
+[clean]
+        requireForce = false
 [tag]
         sort = version:refname
+[help]
+        autocorrect = -1
+[rebase]
+        autosquash = true
+        autostash = true
+[status]
+	showUntrackedFiles = all
 [pager]
         diff = true
         log = true
