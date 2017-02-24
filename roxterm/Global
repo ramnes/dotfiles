@@ -3,6 +3,6 @@ warn_close=1
 only_warn_running=1
 colour_scheme=Tango
 encoding=UTF-8
-prefer_dark_theme=1
+prefer_dark_theme=0
 profile=Default
 shortcut_scheme=Custom
