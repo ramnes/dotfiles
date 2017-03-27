@@ -28,6 +28,7 @@ install misc/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install misc/tm ~/.local/bin/tm
 install misc/user-dirs.dirs ~/.config/user-dirs.dirs
 install qtile ~/.config/qtile
+install readline ~/.inputrc
 install roxterm ~/.config/roxterm.sourceforge.net
 install terminator ~/.config/terminator/config
 install urxvt ~/.Xresources
