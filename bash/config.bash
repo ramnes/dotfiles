@@ -45,7 +45,7 @@ alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
 
 function cd {
-    builtin cd $@ && ls
+    builtin cd "$@" && ls
 }
 
 test -f ~/.bash_aliases && source ~/.bash_aliases
