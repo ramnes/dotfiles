@@ -49,3 +49,4 @@ function cd {
 }
 
 test -f ~/.bash_aliases && source ~/.bash_aliases
+test -f ~/.z.sh && source ~/.z.sh
