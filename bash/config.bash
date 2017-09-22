@@ -42,10 +42,18 @@ alias plz='sudo $(history -p !-1)'
 alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate && activate'
 alias reload='source ~/.bashrc'
+alias ssh-all='ssh-add ~/.ssh/*.priv'
+alias ssh-del='ssh-add -D'
 alias sudo='sudo HOME=$HOME '
 
 function cd {
     builtin cd "$@" && ls
+}
+
+function ssh {
+    key=$(eval echo `/usr/bin/ssh -G "$@" | grep identityfile | cut -d' ' -f2`)
+    ssh-add -l 2> /dev/null | grep $key || ssh-add -t 600 $key
+    /usr/bin/ssh "$@"
 }
 
 test -f ~/.bash_aliases && source ~/.bash_aliases
