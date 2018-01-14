@@ -22,6 +22,7 @@ install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
 install misc/background.jpg ~/.background.jpg
+install misc/context-color.sh ~/.local/bin/context-color
 install misc/git-prompt.sh ~/.git-prompt.sh
 install misc/mouserate.py ~/.local/bin/mouserate
 install misc/spotify-dbus.bash ~/.local/bin/spotify-dbus
