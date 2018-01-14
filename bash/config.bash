@@ -1,24 +1,25 @@
 stty ixany
 stty ixoff -ixon
 
-user="\[\e[37;1m\]\u"
-at="\[\e[38;5;153m\]@"
-host="\[\e[37;1m\]\h"
-bg="\[\e[38;5;117m\]:\j"
-path="\[\e[38;5;153m\]\w"
-git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
-
-test -f ~/.git-prompt.sh && source ~/.git-prompt.sh || git=""
-
 export EDITOR=emacs
 export GIT_EDITOR=emacs
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export PATH="~/.local/bin:/usr/local/heroku/bin:$PATH"
-export PS1="$user$at$host $bg $path $git\[\e[0m\]"
 export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
+
+color="$(context-color)"
+user="\[\e[37;1m\]\u"
+at="$color@"
+host="\[\e[37;1m\]\h"
+bg="\[\e[0m\]$color:\j"
+path="\[\e[37;1m\]$color\w"
+git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
+
+test -f ~/.git-prompt.sh && source ~/.git-prompt.sh || git=""
+export PS1="$user$at$host $bg $path $git\[\e[0m\]"
 
 shopt -s histappend
 shopt -s checkwinsize

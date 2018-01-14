@@ -4,3 +4,6 @@
 [submodule "qtile"]
 	path = qtile
 	url = https://github.com/ramnes/qtile-config.git
+[submodule "misc/context-color"]
+	path = misc/context-color
+	url = https://github.com/ramnes/context-color.git
