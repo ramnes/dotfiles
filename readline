@@ -12,6 +12,3 @@ set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set skip-completed-text on
 set visible-stats on
-
-"\t": menu-complete
-"\e[Z": menu-complete-backward
