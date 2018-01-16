@@ -14,7 +14,7 @@ CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\[$(tput setaf 1)\]"
 
 set-prompt() {
-    if [ "$?" != 0 ]
+    if [[ "$?" != 0 ]]
     then
         color="$FAIL_COLOR"
     else
@@ -27,7 +27,7 @@ set-prompt() {
     jobs="\[\e[0m\]$color:\j"
     path="\[\e[37;1m\]$color\w"
 
-    if [ -n "$(type -t __git_ps1)" ]
+    if [[ -n "$(type -t __git_ps1)" ]]
     then
         git="\[\e[38;5;242m\]\$(__git_ps1 '⎇ %s ')"
     else
