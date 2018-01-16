@@ -7,6 +7,7 @@ URxvt.saveLines: 99999
 URxvt.scrollBar: false
 
 URxvt.font: xft:DejaVu Sans Mono:pixelsize=11
+URxvt.letterSpace: -1
 URxvt.boldFont: xft:DejaVu Sans Mono:style=Bold:pixelsize=11
 
 URxvt.depth: 32
