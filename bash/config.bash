@@ -21,6 +21,7 @@ git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
 test -f ~/.git-prompt.sh && source ~/.git-prompt.sh || git=""
 export PS1="$user$at$host $bg $path $git\[\e[0m\]"
 
+shopt -s autocd
 shopt -s checkwinsize
 shopt -s cmdhist
 shopt -s extglob
