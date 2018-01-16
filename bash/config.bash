@@ -10,7 +10,7 @@ export PATH="~/.local/bin:/usr/local/heroku/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
 
-color="$(context-color)"
+color="$(context-color -p)"
 user="\[\e[37;1m\]\u"
 at="$color@"
 host="\[\e[37;1m\]\h"
