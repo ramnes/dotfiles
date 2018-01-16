@@ -14,12 +14,12 @@ color="$(context-color -p)"
 user="\[\e[37;1m\]\u"
 at="$color@"
 host="\[\e[37;1m\]\h"
-bg="\[\e[0m\]$color:\j"
+jobs="\[\e[0m\]$color:\j"
 path="\[\e[37;1m\]$color\w"
 git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
 
 test -f ~/.git-prompt.sh && source ~/.git-prompt.sh || git=""
-export PS1="$user$at$host $bg $path $git\[\e[0m\]"
+export PS1="$user$at$host $jobs $path $git\[\e[0m\]"
 
 shopt -s autocd
 shopt -s checkwinsize
