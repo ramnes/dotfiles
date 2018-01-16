@@ -21,8 +21,11 @@ git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
 test -f ~/.git-prompt.sh && source ~/.git-prompt.sh || git=""
 export PS1="$user$at$host $bg $path $git\[\e[0m\]"
 
-shopt -s histappend
 shopt -s checkwinsize
+shopt -s cmdhist
+shopt -s extglob
+shopt -s globstar
+shopt -s histappend
 
 alias activate='. .venv/bin/activate 2>/dev/null || . .env/bin/activate 2>/dev/null'
 alias clean='rm -vf `find | egrep "(*~|*\.pyc|*\.pyo|\#*\#|*\.class|*_flymake\.py)"` 2>/dev/null'
