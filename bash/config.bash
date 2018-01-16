@@ -59,3 +59,4 @@ source-if-exists() {
 
 source-if-exists ~/.bash_aliases
 source-if-exists ~/.z.sh
+source-if-exists /usr/share/bash-completion/bash_completion
