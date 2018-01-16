@@ -53,5 +53,9 @@ cd() {
     builtin cd "$@" && ls
 }
 
-test -f ~/.bash_aliases && source ~/.bash_aliases
-test -f ~/.z.sh && source ~/.z.sh
+source-if-exists() {
+    test -f "$1" && source "$1"
+}
+
+source-if-exists ~/.bash_aliases
+source-if-exists ~/.z.sh
