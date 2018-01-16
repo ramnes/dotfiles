@@ -37,34 +37,33 @@ set-venv() {
 set-prompt() {
     if [[ "$?" != 0 ]]
     then
-        color="$FAIL_COLOR"
-    else
-        color="$CONTEXT_COLOR"
+        local status_color="$FAIL_COLOR"
     fi
 
     user="\[\e[37;1m\]\u"
-    at="$color@"
+    at="$CONTEXT_COLOR@"
     host="\[\e[37;1m\]\h"
-    jobs="\[\e[0m\]$color:\j"
-    path="\[\e[37;1m\]$color\w"
+    jobs="\[\e[0m\]$CONTEXT_COLOR:\j"
+    path="\[\e[37;1m\]$CONTEXT_COLOR\w"
+    status="$status_color❯"
 
     set-venv
 
     if [[ "$VIRTUAL_ENV" ]]
     then
-        venv="\[\e[38;5;242m\]◌$(basename $VIRTUAL_ENV) "
+        venv="◌$(basename $VIRTUAL_ENV) "
     else
         venv=""
     fi
 
     if [[ -n "$(type -t __git_ps1)" ]]
     then
-        git="\[\e[38;5;242m\]\$(__git_ps1 '⎇ %s ')"
+        git="$(__git_ps1 '⎇ %s ')"
     else
         git=""
     fi
 
-    export PS1="$user$at$host $jobs $path $venv$git\[\e[0m\]"
+    export PS1="$user$at$host $jobs $path \[\e[38;5;242m\]$git$venv$status\[\e[0m\] "
 }
 
 export PROMPT_COMMAND=set-prompt
