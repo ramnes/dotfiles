@@ -10,16 +10,34 @@ export PATH="~/.local/bin:/usr/local/heroku/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
 
-color="$(context-color -p)"
-user="\[\e[37;1m\]\u"
-at="$color@"
-host="\[\e[37;1m\]\h"
-jobs="\[\e[0m\]$color:\j"
-path="\[\e[37;1m\]$color\w"
-git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
+CONTEXT_COLOR="$(context-color -p)"
+FAIL_COLOR="\[$(tput setaf 1)\]"
 
-source ~/.git-prompt.sh || git=""
-export PS1="$user$at$host $jobs $path $git\[\e[0m\]"
+set-prompt() {
+    if [ "$?" != 0 ]
+    then
+        color="$FAIL_COLOR"
+    else
+        color="$CONTEXT_COLOR"
+    fi
+
+    user="\[\e[37;1m\]\u"
+    at="$color@"
+    host="\[\e[37;1m\]\h"
+    jobs="\[\e[0m\]$color:\j"
+    path="\[\e[37;1m\]$color\w"
+
+    if [ -n "$(type -t __git_ps1)" ]
+    then
+        git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
+    else
+        git=""
+    fi
+
+    export PS1="$user$at$host $jobs $path $git\[\e[0m\]"
+}
+
+export PROMPT_COMMAND=set-prompt
 
 shopt -s autocd
 shopt -s checkwinsize
@@ -58,5 +76,6 @@ source-if-exists() {
 }
 
 source-if-exists ~/.bash_aliases
+source-if-exists ~/.git-prompt.sh
 source-if-exists ~/.z.sh
 source-if-exists /usr/share/bash-completion/bash_completion
