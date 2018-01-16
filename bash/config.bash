@@ -49,7 +49,7 @@ alias reactivate='deactivate && activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
 
-function cd {
+cd() {
     builtin cd "$@" && ls
 }
 
