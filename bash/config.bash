@@ -72,7 +72,7 @@ cd() {
 }
 
 source-if-exists() {
-    test -f "$1" && source "$1"
+    test -f "$1" && source "$1" || true
 }
 
 source-if-exists ~/.bash_aliases
