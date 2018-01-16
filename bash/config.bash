@@ -29,7 +29,7 @@ set-prompt() {
 
     if [ -n "$(type -t __git_ps1)" ]
     then
-        git="\[\e[38;5;242m\]\$(__git_ps1 '⎇%s ')"
+        git="\[\e[38;5;242m\]\$(__git_ps1 '⎇ %s ')"
     else
         git=""
     fi
