@@ -18,6 +18,7 @@ install bash/config.bash ~/.bashrc
 install bash/profile.bash ~/.bash_profile
 install colordiff ~/.colordiffrc
 install emacs ~/.emacs.d
+install git/diff-highlight ~/.local/bin/diff-highlight
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
