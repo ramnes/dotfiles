@@ -34,6 +34,7 @@ install qtile ~/.config/qtile
 install readline ~/.inputrc
 install roxterm ~/.config/roxterm.sourceforge.net
 install terminator ~/.config/terminator/config
+install tmux ~/.tmux.conf
 install urxvt ~/.Xresources
 install uzbl ~/.config/uzbl/config
 install xprofile ~/.xprofile
