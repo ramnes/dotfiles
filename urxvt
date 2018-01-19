@@ -1,5 +1,4 @@
 URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/uzbl-browser
 URxvt.matcher.button: 1
 
 URxvt.cursorBlink: true
