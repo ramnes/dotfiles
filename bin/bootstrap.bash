@@ -4,4 +4,8 @@ mkdir -p ~/.ssh/connections
 chmod 700 ~/.ssh
 cp -i ssh ~/.ssh/config
 bash bin/install.bash
+
 source ~/.bashrc
+pip install --user -I ipython flake8
+emacs-re
+emacs --load ~/.emacs.d/init.el --batch -f "jedi:install-server"
