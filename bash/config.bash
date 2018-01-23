@@ -27,6 +27,13 @@ set-prompt() {
     jobs="\[\e[0m\]$color:\j"
     path="\[\e[37;1m\]$color\w"
 
+    if [[ "$VIRTUAL_ENV" ]]
+    then
+        venv="\[\e[38;5;242m◌ \]$(basename $VIRTUAL_ENV) "
+    else
+        venv=""
+    fi
+
     if [[ -n "$(type -t __git_ps1)" ]]
     then
         git="\[\e[38;5;242m\]\$(__git_ps1 '⎇ %s ')"
@@ -34,7 +41,7 @@ set-prompt() {
         git=""
     fi
 
-    export PS1="$user$at$host $jobs $path $git\[\e[0m\]"
+    export PS1="$user$at$host $jobs $path $venv$git\[\e[0m\]"
 }
 
 export PROMPT_COMMAND=set-prompt
