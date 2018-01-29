@@ -29,7 +29,7 @@ set-prompt() {
 
     if [[ "$VIRTUAL_ENV" ]]
     then
-        venv="\[\e[38;5;242m\]◌ $(basename $VIRTUAL_ENV) "
+        venv="\[\e[38;5;242m\]◌$(basename $VIRTUAL_ENV) "
     else
         venv=""
     fi
