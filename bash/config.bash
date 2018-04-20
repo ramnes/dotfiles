@@ -70,7 +70,7 @@ alias nautilus='nautilus --no-desktop'
 alias open='xdg-open'
 alias plz='sudo $(history -p !-1)'
 alias randpass='apg -MsNCL -m10'
-alias reactivate='deactivate && activate'
+alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
 
