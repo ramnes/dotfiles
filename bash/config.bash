@@ -76,6 +76,15 @@ alias sudo='sudo HOME=$HOME '
 
 cd() {
     builtin cd "$@" && ls
+    if [[ -d ".venv" ]];
+    then
+        source .venv/bin/activate
+        export AUTO_SOURCED_VENV="$(pwd)"
+    elif [ "$AUTO_SOURCED_VENV" ] && [[ ! "$(pwd)" =~ "$AUTO_SOURCED_VENV" ]]
+    then
+        deactivate 2> /dev/null
+        unset AUTO_SOURCED_VENV
+    fi
 }
 
 source-if-exists() {
