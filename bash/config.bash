@@ -13,16 +13,21 @@ export TERM="xterm-256color"
 CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\[$(tput setaf 1)\]"
 
+echo-and-run() {
+    echo -e "\e[38;5;242m… $@\e[0m"
+    eval "$@"
+}
+
 set-venv() {
     if [[ -d ".venv" ]] && [ ! "$AUTO_SOURCED_VENV" ];
     then
-        source .venv/bin/activate
+        echo-and-run source .venv/bin/activate
         export AUTO_SOURCED_VENV="$(pwd)"
     elif [ "$AUTO_SOURCED_VENV" ] \
              && ( [[ ! "$(pwd)" =~ "$AUTO_SOURCED_VENV" ]] \
                       || [[ ! -d "$AUTO_SOURCED_VENV/.venv" ]] )
     then
-        deactivate 2> /dev/null
+        echo-and-run deactivate 2> /dev/null
         unset AUTO_SOURCED_VENV
     fi
 }
@@ -91,7 +96,7 @@ alias reload='source ~/.bashrc'
 alias sudo='sudo HOME=$HOME '
 
 cd() {
-    builtin cd "$@" && ls
+    builtin cd "$@" && echo-and-run ls
 }
 
 source-if-exists() {
