@@ -13,6 +13,20 @@ export TERM="xterm-256color"
 CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\[$(tput setaf 1)\]"
 
+set-venv() {
+    if [[ -d ".venv" ]] && [ ! "$AUTO_SOURCED_VENV" ];
+    then
+        source .venv/bin/activate
+        export AUTO_SOURCED_VENV="$(pwd)"
+    elif [ "$AUTO_SOURCED_VENV" ] \
+             && ( [[ ! "$(pwd)" =~ "$AUTO_SOURCED_VENV" ]] \
+                      || [[ ! -d "$AUTO_SOURCED_VENV/.venv" ]] )
+    then
+        deactivate 2> /dev/null
+        unset AUTO_SOURCED_VENV
+    fi
+}
+
 set-prompt() {
     if [[ "$?" != 0 ]]
     then
@@ -26,6 +40,8 @@ set-prompt() {
     host="\[\e[37;1m\]\h"
     jobs="\[\e[0m\]$color:\j"
     path="\[\e[37;1m\]$color\w"
+
+    set-venv
 
     if [[ "$VIRTUAL_ENV" ]]
     then
@@ -76,15 +92,6 @@ alias sudo='sudo HOME=$HOME '
 
 cd() {
     builtin cd "$@" && ls
-    if [[ -d ".venv" ]];
-    then
-        source .venv/bin/activate
-        export AUTO_SOURCED_VENV="$(pwd)"
-    elif [ "$AUTO_SOURCED_VENV" ] && [[ ! "$(pwd)" =~ "$AUTO_SOURCED_VENV" ]]
-    then
-        deactivate 2> /dev/null
-        unset AUTO_SOURCED_VENV
-    fi
 }
 
 source-if-exists() {
