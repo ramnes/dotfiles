@@ -14,7 +14,7 @@ CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\[$(tput setaf 1)\]"
 
 echo-and-run() {
-    echo -e "\e[38;5;242m… $@\e[0m"
+    echo -e "$@"
     eval "$@"
 }
 
