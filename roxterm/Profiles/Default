@@ -9,3 +9,5 @@ hide_menubar=1
 font=DejaVu Sans Mono 8
 colour_scheme=Tango
 browser=chromium-browser
+scroll_on_output=0
+scroll_on_keystroke=1
