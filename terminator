@@ -15,6 +15,7 @@
     background_type = transparent
     use_system_font = False
     cursor_color = "#666666"
+    cursor_color_fg = False
     foreground_color = "#ffffff"
     show_titlebar = False
     font = DejaVu Sans Mono 8
