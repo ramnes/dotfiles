@@ -12,3 +12,8 @@ set show-all-if-ambiguous on
 set show-all-if-unmodified on
 set skip-completed-text on
 set visible-stats on
+
+# urxvt
+"\e[8~": end-of-line
+"\eOc": forward-word
+"\eOd": backward-word
