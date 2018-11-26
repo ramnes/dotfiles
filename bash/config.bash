@@ -90,7 +90,6 @@ alias ls='ls --color=auto -F'
 alias modprobe='modprobe --first-time'
 alias nautilus='nautilus --no-desktop'
 alias open='xdg-open'
-alias plz='sudo $(history -p !-1)'
 alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
@@ -109,5 +108,4 @@ source-if-exists ~/.git-prompt.sh
 source-if-exists ~/.kubectx.bash
 source-if-exists ~/.kubens.bash
 source-if-exists ~/.kubetail.bash
-source-if-exists ~/.z.sh
 source-if-exists /usr/share/bash-completion/bash_completion
