@@ -7,3 +7,9 @@
 [submodule "misc/context-color"]
 	path = contrib/context-color
 	url = https://github.com/ramnes/context-color.git
+[submodule "contrib/kubetail"]
+	path = contrib/kubetail
+	url = https://github.com/johanhaleby/kubetail.git
+[submodule "contrib/kubectx"]
+	path = contrib/kubectx
+	url = https://github.com/ahmetb/kubectx.git

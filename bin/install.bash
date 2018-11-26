@@ -21,6 +21,12 @@ install contrib/background.jpg ~/.background.jpg
 install contrib/context-color/context-color ~/.local/bin/context-color
 install contrib/diff-highlight ~/.local/bin/diff-highlight
 install contrib/git-prompt.sh ~/.git-prompt.sh
+install contrib/kubectx/completion/kubectx.bash ~/.kubectx.bash
+install contrib/kubectx/completion/kubens.bash ~/.kubens.bash
+install contrib/kubectx/kubectx ~/.local/bin/kubectx
+install contrib/kubectx/kubens ~/.local/bin/kubens
+install contrib/kubetail/completion/kubetail.bash ~/.kubetail.bash
+install contrib/kubetail/kubetail ~/.local/bin/kubetail
 install contrib/mouserate.py ~/.local/bin/mouserate
 install contrib/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install contrib/tm ~/.local/bin/tm
