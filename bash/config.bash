@@ -105,7 +105,7 @@ source-if-exists() {
 
 source-if-exists ~/.bash_aliases
 source-if-exists ~/.git-prompt.sh
-source-if-exists ~/.kubectx.bash
-source-if-exists ~/.kubens.bash
-source-if-exists ~/.kubetail.bash
+source-if-exists ~/.kctx.bash
+source-if-exists ~/.kns.bash
+source-if-exists ~/.kt.bash
 source-if-exists /usr/share/bash-completion/bash_completion
