@@ -99,6 +99,10 @@ cd() {
     builtin cd "$@" && echo-and-run ls
 }
 
+hl() {
+    grep -E "$@|"
+}
+
 source-if-exists() {
     test -f "$1" && source "$1" || true
 }
