@@ -7,7 +7,7 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=1000000
 export HISTSIZE=1000000
 export LS_COLORS="or=41;01:mi=41;01"
-export PATH="$HOME/.local/bin:/usr/local/heroku/bin:/opt/bin/:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/heroku/bin:/opt/bin/:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
 
