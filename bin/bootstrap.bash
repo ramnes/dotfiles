@@ -9,5 +9,6 @@ source ~/.bashrc
 pip install --user -I ipython
 pip install --user -I flake8
 go get github.com/nsf/gocode
+go get golang.org/x/tools/cmd/goimports
 emacs-re
 emacs --load ~/.emacs.d/init.el --batch -f "jedi:install-server"
