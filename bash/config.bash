@@ -78,7 +78,6 @@ shopt -s histappend
 
 alias activate='. .venv/bin/activate 2>/dev/null || . .env/bin/activate 2>/dev/null'
 alias clean='rm -vf `find | egrep "(*~|*\.pyc|*\.pyo|\#*\#|*\.class|*_flymake\.py)"` 2>/dev/null'
-alias diff='colordiff -Nu'
 alias dog='pygmentize -g'
 alias emacs-clean='rm -vf `find ~/.emacs.d/ | grep \.elc`'
 alias emacs-compile="~/.emacs.d/bin/compile"
@@ -98,6 +97,10 @@ alias sudo='sudo HOME=$HOME '
 
 cd() {
     builtin cd "$@" && echo-and-run ls
+}
+
+diff() {
+    colordiff -Nu "$@" | diff-highlight
 }
 
 hl() {
