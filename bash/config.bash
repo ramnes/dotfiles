@@ -1,3 +1,4 @@
+#!/bin/bash
 stty ixany
 stty ixoff -ixon
 
@@ -13,7 +14,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
 
 CONTEXT_COLOR="$(context-color -p)"
-FAIL_COLOR="\[$(tput setaf 1)\]"
+FAIL_COLOR="\\[$(tput setaf 1)\\]"
 
 echo-and-run() {
     echo -e "$@"
@@ -42,29 +43,29 @@ set-prompt() {
         color="$CONTEXT_COLOR"
     fi
 
-    user="\[\e[37;1m\]\u"
+    user="\\[\\e[37;1m\\]\\u"
     at="$color@"
-    host="\[\e[37;1m\]\h"
-    jobs="\[\e[0m\]$color:\j"
-    path="\[\e[37;1m\]$color\w"
+    host="\\[\\e[37;1m\\]\\h"
+    jobs="\\[\\e[0m\\]$color:\\j"
+    path="\\[\\e[37;1m\\]$color\\w"
 
     set-venv
 
     if [[ "$VIRTUAL_ENV" ]]
     then
-        venv="\[\e[38;5;242m\]◌$(basename $VIRTUAL_ENV) "
+        venv="\\[\\e[38;5;242m\\]◌$(basename $VIRTUAL_ENV) "
     else
         venv=""
     fi
 
     if [[ -n "$(type -t __git_ps1)" ]]
     then
-        git="\[\e[38;5;242m\]\$(__git_ps1 '⎇ %s ')"
+        git="\\[\\e[38;5;242m\\]$(__git_ps1 '⎇ %s ')"
     else
         git=""
     fi
 
-    export PS1="$user$at$host $jobs $path $venv$git\[\e[0m\]"
+    export PS1="$user$at$host $jobs $path $venv$git\\[\\e[0m\\]"
 }
 
 export PROMPT_COMMAND=set-prompt
@@ -108,7 +109,11 @@ hl() {
 }
 
 source-if-exists() {
-    test -f "$1" && source "$1" || true
+    if [[ -f "$1" ]]
+    then
+        # shellcheck source=/dev/null
+        source "$1"
+    fi
 }
 
 source-if-exists ~/.bash_aliases
