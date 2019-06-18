@@ -42,4 +42,5 @@ install terminator ~/.config/terminator/config
 install tmux ~/.tmux.conf
 install urxvt ~/.Xresources
 install uzbl ~/.config/uzbl/config
+install xinitrc ~/.xinitrc
 install xprofile ~/.xprofile
