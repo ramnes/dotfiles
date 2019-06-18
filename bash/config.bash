@@ -68,7 +68,16 @@ set-prompt() {
     export PS1="$user$at$host $jobs $path $venv$git\\[\\e[0m\\]"
 }
 
-export PROMPT_COMMAND=set-prompt
+set-title() {
+    echo -ne "\033]0;$(whoami)@$(hostname) :$(jobs | wc -l) $(dirs)\007"
+}
+
+set-prompt-and-title() {
+    set-prompt
+    set-title
+}
+
+export PROMPT_COMMAND=set-prompt-and-title
 
 shopt -s autocd
 shopt -s checkwinsize
