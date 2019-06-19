@@ -85,3 +85,9 @@ Section "InputClass"
     Option "NaturalScrolling" "on"
 EndSection
 ```
+
+In `/etc/inittab` (yep, I'm still not using systemd), replace tty1 with:
+
+```
+c1:12345:respawn:/sbin/agetty --autologin <username> --noclear 38400 tty1 linux
+```
