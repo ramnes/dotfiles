@@ -1,4 +1,5 @@
 #!/bin/bash
 if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
+    # shellcheck disable=SC1090
+    . ~/.bashrc
 fi
