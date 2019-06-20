@@ -7,5 +7,4 @@ compton -cG -r10 -o.1 -b &
 redshift -l 48.8:2.32 -t 5500:4500 -l manual &
 xrdb ~/.Xresources &
 nm-applet &
-indicator-cpufreq &
 eval `ssh-agent -t 300`
