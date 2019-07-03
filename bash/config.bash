@@ -118,6 +118,16 @@ hl() {
     grep -E "$@|"
 }
 
+csv_pp() {
+    if [[ "$2" ]]
+    then
+        DELIMITER="$2"
+    else
+        DELIMITER=","
+    fi
+    column -s"$DELIMITER" -t < "$1" | less -#2 -N -S
+}
+
 source-if-exists() {
     if [[ -f "$1" ]]
     then
