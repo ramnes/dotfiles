@@ -62,6 +62,18 @@ GTK_IM_MODULE=cedilla
 QT_IM_MODULE=cedilla
 ```
 
+In `/etc/X11/xorg.conf.d/10keyboard.conf`:
+
+```sh
+Section "InputClass"
+    Identifier "keyboard"
+    MatchIsKeyboard "on"
+    Option "XkbLayout" "us"
+    Option "XkbVariant" "intl"
+    Option "XkbOptions" "compose:lwin,ctrl:swap_lwin_lctl,caps:ctrl_modifier"
+EndSection
+```
+
 In `/etc/X11/xorg.conf.d/40monitor.conf`:
 
 ```sh

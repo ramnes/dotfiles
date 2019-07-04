@@ -5,5 +5,5 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [[ $(tty) == /dev/tty1 && ! $DISPLAY ]]; then
-    exec xinit
+    exec xinit -- -ardelay 200 -arinterval 20
 fi
