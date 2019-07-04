@@ -11,7 +11,7 @@ URxvt.boldFont: xft:DejaVu Sans Mono:style=Bold:pixelsize=11
 
 URxvt.depth: 32
 URxvt.foreground: #FFFFFF
-URxvt.background: [95]#333333
+URxvt.background: [90]#1a1a1a
 
 URxvt.cursorColor: #888888
 URxvt.cursorColor2: #FFFFFF
