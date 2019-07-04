@@ -17,6 +17,7 @@ cd $(dirname $0)/..
 install bash/config.bash ~/.bashrc
 install bash/profile.bash ~/.bash_profile
 install colordiff ~/.colordiffrc
+install compton ~/.compton.conf
 install contrib/background.jpg ~/.background.jpg
 install contrib/context-color/context-color ~/.local/bin/context-color
 install contrib/diff-highlight ~/.local/bin/diff-highlight
