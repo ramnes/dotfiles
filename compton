@@ -17,6 +17,7 @@ mark-wmwin-focused = true;
 menu-opacity = 0.9;
 paint-on-overlay = true;
 refresh-rate = 0;
+resize-damage = 4;
 shadow = true;
 shadow-offset-x = -10;
 shadow-offset-y = -10;
