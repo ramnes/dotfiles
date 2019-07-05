@@ -23,3 +23,4 @@ shadow-offset-x = -10;
 shadow-offset-y = -10;
 shadow-opacity = 0.3;
 shadow-radius = 7;
+vsync = "opengl";
