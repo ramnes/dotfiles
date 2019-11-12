@@ -19,6 +19,7 @@ They use:
 * `feh`
 * `setxkbmap`
 * `xrandr`
+* `autorandr`
 * `compton`
 * `nm-applet`
 * `redshift`
