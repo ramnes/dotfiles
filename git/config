@@ -36,6 +36,7 @@
         diff = diff-highlight | less
         log = diff-highlight | less
         show = diff-highlight | less
+        branch = false
         grep = false
 [color "diff"]
         old = "red bold"
