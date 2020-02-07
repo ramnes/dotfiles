@@ -36,6 +36,7 @@ install emacs ~/.emacs.d
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
+install npm ~/.npmrc
 install qtile ~/.config/qtile
 install readline ~/.inputrc
 install roxterm ~/.config/roxterm.sourceforge.net
