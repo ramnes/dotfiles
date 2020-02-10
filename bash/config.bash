@@ -12,6 +12,7 @@ export LS_COLORS="or=41;01:mi=41;01"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/heroku/bin:/opt/bin/:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export TERM="xterm-256color"
+export VISUAL=emacs
 
 CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\\[$(tput setaf 1)\\]"
