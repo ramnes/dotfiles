@@ -105,7 +105,7 @@ alias open='xdg-open'
 alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
-alias sudo='sudo HOME=$HOME '
+alias sudo='sudo -E '
 
 cd() {
     builtin cd "$@" && echo-and-run ls
