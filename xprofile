@@ -1,6 +1,5 @@
 xsetroot -cursor_name left_ptr &
 xrandr --dpi 96x96 &
-feh --bg-tile ~/.background.jpg &
 compton &
 redshift -l 48.8:2.32 -t 5500:4500 -l manual &
 xrdb ~/.Xresources &
