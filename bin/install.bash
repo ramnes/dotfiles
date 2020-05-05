@@ -32,6 +32,7 @@ install contrib/mouserate.py ~/.local/bin/mouserate
 install contrib/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install contrib/tm ~/.local/bin/tm
 install contrib/user-dirs.dirs ~/.config/user-dirs.dirs
+install curl ~/.curlrc
 install emacs ~/.emacs.d
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
