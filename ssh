@@ -2,4 +2,4 @@ Host *
      AddKeysToAgent yes
      ServerAliveInterval 30
      ControlMaster auto
-     ControlPath ~/.ssh/connections/%r@%h:%p
+     ControlPath ~/.ssh/connections/%C
