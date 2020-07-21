@@ -147,3 +147,5 @@ source-if-exists ~/.kctx.bash
 source-if-exists ~/.kns.bash
 source-if-exists ~/.kt.bash
 source-if-exists /usr/share/bash-completion/bash_completion
+
+complete -C /usr/bin/terraform terraform
