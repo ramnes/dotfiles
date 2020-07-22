@@ -50,8 +50,6 @@ set-prompt() {
     jobs="\\[\\e[0m\\]$color:\\j"
     path="\\[\\e[37;1m\\]$color\\w"
 
-    set-venv
-
     if [[ "$VIRTUAL_ENV" ]]
     then
         venv="\\[\\e[38;5;242m\\]◌$(basename $VIRTUAL_ENV) "
@@ -73,12 +71,7 @@ set-title() {
     echo -ne "\033]0;$(whoami)@$(hostname) :$(jobs | wc -l) $(dirs)\007"
 }
 
-set-prompt-and-title() {
-    set-prompt
-    set-title
-}
-
-export PROMPT_COMMAND=set-prompt-and-title
+export PROMPT_COMMAND="set-venv; set-prompt; set-title"
 
 shopt -s autocd
 shopt -s checkwinsize
