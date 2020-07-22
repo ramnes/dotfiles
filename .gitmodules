@@ -13,3 +13,6 @@
 [submodule "contrib/kubectx"]
 	path = contrib/kubectx
 	url = https://github.com/ahmetb/kubectx.git
+[submodule "contrib/splatmoji"]
+	path = contrib/splatmoji
+	url = git@github.com:cspeterson/splatmoji.git

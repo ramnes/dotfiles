@@ -1,0 +1,3 @@
+xsel_command=xsel
+xdotool_command=xdotool type
+rofi_command=rofi -dmenu -p 'type: ' -i

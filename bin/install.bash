@@ -29,6 +29,7 @@ install contrib/kubectx/kubens ~/.local/bin/kns
 install contrib/kubetail/completion/kubetail.bash ~/.kt.bash
 install contrib/kubetail/kubetail ~/.local/bin/kt
 install contrib/mouserate.py ~/.local/bin/mouserate
+install contrib/splatmoji/splatmoji ~/.local/bin/splatmoji
 install contrib/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install contrib/tm ~/.local/bin/tm
 install contrib/user-dirs.dirs ~/.config/user-dirs.dirs
@@ -40,7 +41,9 @@ install ipython ~/.ipython/profile_default/ipython_config.py
 install npm ~/.npmrc
 install qtile ~/.config/qtile
 install readline ~/.inputrc
+install rofi ~/.config/rofi
 install roxterm ~/.config/roxterm.sourceforge.net
+install splatmoji ~/.config/splatmoji/splatmoji.config
 install terminator ~/.config/terminator/config
 install tmux ~/.tmux.conf
 install urxvt ~/.Xresources

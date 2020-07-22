@@ -1,0 +1,30 @@
+configuration {
+    modi: "run";
+    terminal: "roxterm";
+    ssh-client: "mosh";
+    run-command: "bash -c \"{cmd}\"";
+    run-shell-command: "{terminal} -e bash -c '{cmd}; read -n 1 -s'";
+    matching: "normal";
+    separator-style: "none";
+    fake-transparency: true;
+    theme: "~/.config/rofi/theme.rasi";
+    display-run: "run: ";
+    display-ssh: "ssh: ";
+    display-drun: "drun: ";
+    display-combi: "combi: ";
+    display-keys: "keys: ";
+    kb-primary-paste: "Shift+Insert";
+    kb-secondary-paste: "Control+y";
+    kb-clear-line: "Control+l";
+    kb-remove-word-back: "Control+w,Control+BackSpace";
+    kb-select-1: "Ctrl+1";
+    kb-select-2: "Ctrl+2";
+    kb-select-3: "Ctrl+3";
+    kb-select-4: "Ctrl+4";
+    kb-select-5: "Ctrl+5";
+    kb-select-6: "Ctrl+6";
+    kb-select-7: "Ctrl+7";
+    kb-select-8: "Ctrl+8";
+    kb-select-9: "Ctrl+9";
+    kb-select-10: "Ctrl+0";
+}

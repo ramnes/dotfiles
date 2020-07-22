@@ -1,0 +1,38 @@
+* {
+    theme-grey: #222222;
+    theme-dark-grey: #111111;
+    theme-light-grey: #666666;
+    theme-white: #ffffff;
+
+    font: "DejaVu Sans Mono 9";
+    width: 25em;
+    background-color: @theme-dark-grey;
+}
+
+#mainbox {
+    spacing: 4;
+    background-color: @theme-dark-grey;
+}
+
+#inputbar, entry, prompt, case-indicator {
+    background-color: @theme-grey;
+    color: @theme-white;
+}
+
+#inputbar {
+    padding: 8;
+}
+
+#listview {
+    background-color: @theme-dark-grey;
+    lines: 10;
+}
+
+#element {
+    padding: 0 8 4 8;
+    color: @theme-light-grey;
+}
+
+#element selected {
+    color: @theme-white;
+}

@@ -11,6 +11,7 @@ They configure:
 * `emacs`
 * `tmux`
 * `htop`
+* `rofi`
 
 They use:
 * `pip`
@@ -31,6 +32,7 @@ They bundle:
 * `kt` and `kctx`, for an easier administration of Kubernetes clusters
   (requires `kubectl`)
 * `mouserate`, that gives you your current mouse polling rate (requires `xev`)
+* `splatmoji`, to pick up fancy emojis (requires `rofi`, `xdotool` and `xsel`)
 * `spotify-dbus`, to control Spotify from the command line (requires `dbus`)
 * `tm`, to write on multiple servers shells at once (requires `tmux`)
 
