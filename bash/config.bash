@@ -149,3 +149,4 @@ source-if-exists ~/.kt.bash
 source-if-exists /usr/share/bash-completion/bash_completion
 
 complete -C /usr/bin/terraform terraform
+complete -C 'aws_completer' aws
