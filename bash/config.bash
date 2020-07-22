@@ -71,7 +71,7 @@ set-title() {
     echo -ne "\033]0;$(whoami)@$(hostname) :$(jobs | wc -l) $(dirs)\007"
 }
 
-export PROMPT_COMMAND="set-venv; set-prompt; set-title"
+PROMPT_COMMAND="set-venv; set-prompt; set-title"
 
 shopt -s autocd
 shopt -s checkwinsize
