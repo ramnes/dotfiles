@@ -73,7 +73,7 @@ Section "InputClass"
     MatchIsKeyboard "on"
     Option "XkbLayout" "us"
     Option "XkbVariant" "intl"
-    Option "XkbOptions" "compose:lwin,ctrl:swap_lwin_lctl,caps:ctrl_modifier"
+    Option "XkbOptions" "compose:lwin,ctrl:swap_lwin_lctl,caps:ctrl_modifier,shift:both_capslock_cancel"
 EndSection
 ```
 
