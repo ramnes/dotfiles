@@ -11,7 +11,6 @@ detect-transient = true;
 glx-no-rebind-pixmap = true;
 glx-no-stencil = false;
 glx-swap-method = "-1";
-glx-use-copysubbuffermesa = true;
 mark-ovredir-focused = true;
 mark-wmwin-focused = true;
 menu-opacity = 0.9;
