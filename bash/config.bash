@@ -65,7 +65,7 @@ set-prompt() {
         git=""
     fi
 
-    export PS1="$user$at$host $jobs $path $venv$git\\[\\e[0m\\]"
+    PS1="$user$at$host $jobs $path $venv$git\\[\\e[0m\\]"
 }
 
 set-title() {
