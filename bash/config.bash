@@ -22,6 +22,14 @@ echo-and-run() {
     eval "$@"
 }
 
+source-if-exists() {
+    if [[ -f "$1" ]]
+    then
+        # shellcheck source=/dev/null
+        source "$1"
+    fi
+}
+
 set-venv() {
     if [[ -d ".venv" ]] && [ ! "$AUTO_SOURCED_VENV" ];
     then
@@ -68,11 +76,17 @@ set-prompt() {
     PS1="$user$at$host $jobs $path $venv$git\\[\\e[0m\\]"
 }
 
+load-env() {
+    set -o allexport
+    source-if-exists .env
+    set +o allexport
+}
+
 set-title() {
     echo -ne "\033]0;$(whoami)@$(hostname) :$(jobs | wc -l) $(dirs)\007"
 }
 
-PROMPT_COMMAND="set-prompt; set-title"
+PROMPT_COMMAND="set-prompt; load-env; set-title"
 
 shopt -s autocd
 shopt -s checkwinsize
@@ -125,14 +139,6 @@ csv_pp() {
         DELIMITER=","
     fi
     column -s"$DELIMITER" -t < "$1" | less -#2 -N -S
-}
-
-source-if-exists() {
-    if [[ -f "$1" ]]
-    then
-        # shellcheck source=/dev/null
-        source "$1"
-    fi
 }
 
 source-if-exists ~/.bash_aliases
