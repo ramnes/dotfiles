@@ -1,3 +1,2 @@
-xsel_command=xsel
-xdotool_command=xdotool type
+xdotool_command=xdotool sleep 0.2 type --delay 750
 rofi_command=rofi -dmenu -p 'type: ' -i -sort
