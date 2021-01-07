@@ -6,8 +6,8 @@ export EDITOR=emacs
 export GIT_EDITOR=emacs
 export GOPATH="$HOME/.go"
 export HISTCONTROL=ignoredups:ignorespace
-export HISTFILESIZE=1000000
-export HISTSIZE=1000000
+export HISTFILESIZE=-1
+export HISTSIZE=-1
 export LS_COLORS="or=41;01:mi=41;01"
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/heroku/bin:/opt/bin/:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
