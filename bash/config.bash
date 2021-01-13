@@ -34,10 +34,11 @@ set-venv() {
     if [[ -d ".venv" ]] && [ ! "$AUTO_SOURCED_VENV" ];
     then
         echo-and-run source .venv/bin/activate
-        export AUTO_SOURCED_VENV="$(pwd)"
+        AUTO_SOURCED_VENV="$(pwd)"
+        export AUTO_SOURCED_VENV
     elif [ "$AUTO_SOURCED_VENV" ] \
-             && ( [[ ! "$(pwd)" =~ "$AUTO_SOURCED_VENV" ]] \
-                      || [[ ! -d "$AUTO_SOURCED_VENV/.venv" ]] )
+             && { [[ ! "$(pwd)" =~ $AUTO_SOURCED_VENV ]] \
+                      || [[ ! -d "$AUTO_SOURCED_VENV/.venv" ]]; }
     then
         echo-and-run deactivate 2> /dev/null
         unset AUTO_SOURCED_VENV
@@ -45,6 +46,7 @@ set-venv() {
 }
 
 set-prompt() {
+    # shellcheck disable=SC2181
     if [[ "$?" != 0 ]]
     then
         color="$FAIL_COLOR"
@@ -61,7 +63,7 @@ set-prompt() {
     set-venv
     if [[ "$VIRTUAL_ENV" ]]
     then
-        venv="\\[\\e[38;5;242m\\]◌$(basename $VIRTUAL_ENV) "
+        venv="\\[\\e[38;5;242m\\]◌$(basename "$VIRTUAL_ENV") "
     else
         venv=""
     fi
@@ -129,7 +131,7 @@ diff() {
 }
 
 hl() {
-    grep -E "$@|"
+    grep -E "$*"
 }
 
 kt() {
