@@ -131,7 +131,8 @@ diff() {
 }
 
 hl() {
-    grep -E "$*"
+    # shellcheck disable=SC2145
+    grep -E "$@|"
 }
 
 kt() {
