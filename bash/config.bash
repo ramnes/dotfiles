@@ -2,8 +2,8 @@
 stty ixany
 stty ixoff -ixon
 
-export EDITOR=emacs
-export GIT_EDITOR=emacs
+export EDITOR="emacs -nw"
+export GIT_EDITOR="emacs -nw"
 export GOPATH="$HOME/.go"
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=-1
