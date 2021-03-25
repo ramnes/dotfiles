@@ -8,6 +8,7 @@ bash bin/install.bash
 source ~/.bashrc
 pip install --user -I ipython
 pip install --user -I flake8
+pip install --user -I black black-macchiato
 go get github.com/nsf/gocode
 go get golang.org/x/tools/cmd/goimports
 emacs-re
