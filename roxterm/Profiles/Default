@@ -1,7 +1,7 @@
 [roxterm profile]
 scrollback_lines=100000
 background_type=2
-saturation=0.9
+saturation=1.000000
 always_show_tabs=0
 audible_bell=0
 scrollbar_pos=0

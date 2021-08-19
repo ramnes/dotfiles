@@ -21,7 +21,6 @@ They use:
 * `setxkbmap`
 * `xrandr`
 * `autorandr`
-* `compton`
 * `nm-applet`
 * `redshift`
 * `gnome-screenshot`

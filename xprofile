@@ -1,7 +1,6 @@
 xsetroot -cursor_name left_ptr &
 xrandr --dpi 96x96 &
 autorandr --change &
-picom --experimental-backends &
 redshift -l 48.8:2.32 -t 5500:4500 -l manual &
 xrdb ~/.Xresources &
 nm-applet &
