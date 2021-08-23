@@ -5,6 +5,7 @@ chmod 700 ~/.ssh
 cp -i ssh ~/.ssh/config
 bash bin/install.bash
 
+shopt -s expand_aliases
 source ~/.bashrc
 pip install --user -I ipython
 pip install --user -I flake8
