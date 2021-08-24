@@ -16,3 +16,9 @@ set visible-stats on
 "\e[8~": end-of-line
 "\eOc": forward-word
 "\eOd": backward-word
+
+# iTerm2
+"\e[1;9C": end-of-line
+"\e[1;9D": beginning-of-line
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
