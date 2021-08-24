@@ -14,6 +14,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export PYTHONBREAKPOINT="ipdb.set_trace"
 export TERM="xterm-256color"
 export VISUAL=emacs
+export XDG_DATA_DIRS="$HOME/.nix-profile/share/:$XDG_DATA_DIRS"
 
 CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\\[$(tput setaf 1)\\]"
@@ -158,6 +159,9 @@ source-if-exists ~/.kctx.bash
 source-if-exists ~/.kns.bash
 source-if-exists ~/.kt.bash
 source-if-exists /usr/share/bash-completion/bash_completion
+
+source-if-exists ~/.nix-profile/etc/profile.d/nix.sh
+source-if-exists ~/.nix-profile/etc/profile.d/bash_completion.sh
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
