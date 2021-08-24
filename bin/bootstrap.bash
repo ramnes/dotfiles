@@ -1,15 +1,14 @@
-cd $(dirname $0)/..
+cd $(dirname "$0")/..
 cp -i git/config ~/.gitconfig
 mkdir -p ~/.ssh/connections
 chmod 700 ~/.ssh
 cp -i ssh ~/.ssh/config
-bash bin/install.bash
 
-if [ $? -eq 0 ]
+if ! bash bin/install.bash
 then
     bash_path=$(which bash)
-    grep -q ${bash_path} /etc/shells || sudo sh -c "echo ${bash_path} >> /etc/shells"
-    finger $(whoami) | grep -q ${bash_path} || chsh -s ${bash_path}
+    grep -q "${bash_path}" /etc/shells || sudo sh -c "echo ${bash_path} >> /etc/shells"
+    finger $(whoami) | grep -q "${bash_path}" || chsh -s "${bash_path}"
 fi
 
 shopt -s expand_aliases
