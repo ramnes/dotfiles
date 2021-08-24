@@ -1,0 +1,20 @@
+ctrl - return : bash ${HOME}/.config/skhd/scripts/iterm2.sh > /dev/null
+ctrl - u : bash ${HOME}/.config/skhd/scripts/chrome.sh > /dev/null
+
+ctrl - backspace : yabai -m window --close
+ctrl - space : yabai -m window --toggle zoom-fullscreen
+ctrl - s : yabai -m window --toggle zoom-parent 
+
+ctrl - up : yabai -m window --focus prev 2&> /dev/null || yabai -m window --focus last
+ctrl - down : yabai -m window --focus next 2&> /dev/null || yabai -m window --focus first
+
+ctrl + shift - up : yabai -m window --warp north
+ctrl + shift - down : yabai -m window --warp south
+
+ctrl + shift - left : yabai -m window --warp west 2&> /dev/null || yabai -m window --space prev && yabai -m space --focus prev
+ctrl + shift - right : yabai -m window --warp east 2&> /dev/null || yabai -m window --space next && yabai -m space --focus next
+
+ctrl + cmd - up : yabai -m window --resize top:0:-50 2&> /dev/null || yabai -m window --resize bottom:0:-50
+ctrl + cmd - down : yabai -m window --resize top:0:50 2&> /dev/null || yabai -m window --resize bottom:0:50
+ctrl + cmd - left : yabai -m window --resize right:-50:0 2&> /dev/null || yabai -m window --resize left:-50:0
+ctrl + cmd - right : yabai -m window --resize right:50:0 2&> /dev/null || yabai -m window --resize left:50:0

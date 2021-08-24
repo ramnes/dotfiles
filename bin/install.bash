@@ -49,6 +49,7 @@ install qtile ~/.config/qtile
 install readline ~/.inputrc
 install rofi ~/.config/rofi
 install roxterm ~/.config/roxterm.sourceforge.net
+install skhd ~/.config/skhd
 install splatmoji ~/.config/splatmoji/splatmoji.config
 install terminator ~/.config/terminator/config
 install tmux ~/.tmux.conf
@@ -56,5 +57,6 @@ install urxvt ~/.Xresources
 install uzbl ~/.config/uzbl/config
 install xinitrc ~/.xinitrc
 install xprofile ~/.xprofile
+install yabai ~/.config/yabai
 
 command -v home-manager > /dev/null && home-manager switch

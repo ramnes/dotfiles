@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# Layout
+yabai -m config layout bsp
+yabai -m config auto_balance on
+yabai -m config top_padding 10
+yabai -m config bottom_padding 10
+yabai -m config left_padding 10
+yabai -m config right_padding 10
+yabai -m config window_gap 10
+
+# Mouse and floating windows
+yabai -m config focus_follows_mouse autofocus
+yabai -m config mouse_follows_focus on
+yabai -m config mouse_modifier ctrl
+yabai -m config mouse_action1 move
+yabai -m config mouse_action2 resize
+yabai -m config window_shadow float
+
+# Signals
+yabai -m signal --add event=window_destroyed active=yes action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse &> /dev/null || yabai -m window --focus \$(yabai -m query --windows --space | jq .[0].id) &> /dev/null"
