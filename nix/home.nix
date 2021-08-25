@@ -1,13 +1,35 @@
 { pkgs, ... }:
 
-let globalPackages = import ./global.nix { pkgs = pkgs; };
-    platformPackages = import ./platform.nix { pkgs = pkgs; };
-in {
+{
   programs.home-manager.enable = true;
   home = {
     username = builtins.getEnv "USER";
     homeDirectory = builtins.getEnv "HOME";
-    packages = globalPackages ++ platformPackages;
     stateVersion = "21.11";
   };
+
+  home.packages = with pkgs; [
+    bash-completion
+    bashInteractive
+    coreutils
+    curl
+    emacs-nox
+    gh
+    gimp
+    go
+    htop
+    jq
+    kubectl
+    mosh
+    python39
+    python39.pkgs.pip
+    python39.pkgs.setuptools
+    python39.pkgs.virtualenv
+    shellcheck
+    tree
+    tmux
+    watch
+    wget
+    yq
+  ];
 }

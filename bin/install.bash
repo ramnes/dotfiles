@@ -14,8 +14,6 @@ function install {
 }
 
 cd $(dirname $0)/..
-platform=$(uname | tr [:upper:] [:lower:])
-
 install bash/config.bash ~/.bashrc
 install bash/profile.bash ~/.bash_profile
 install colordiff ~/.colordiffrc
@@ -42,8 +40,8 @@ install emacs/bin/emacs ~/.local/bin/emacs
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
-install nix ~/.config/nixpkgs
-install nix/${platform}.nix ~/.config/nixpkgs/platform.nix
+install nix/home.nix ~/.config/nixpkgs/home.nix
+install nix/darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
 install npm ~/.npmrc
 install qtile ~/.config/qtile
 install readline ~/.inputrc
@@ -58,5 +56,3 @@ install uzbl ~/.config/uzbl/config
 install xinitrc ~/.xinitrc
 install xprofile ~/.xprofile
 install yabai ~/.config/yabai
-
-command -v home-manager > /dev/null && home-manager switch
