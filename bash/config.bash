@@ -110,7 +110,6 @@ alias clean='rm -vf $(find . -name "*~" -or -name "*.pyc" -or -name "*.pyo" -or 
 alias dog='pygmentize -g'
 alias emacs-clean='rm -vf `find ~/.emacs.d/ | grep \.elc`'
 alias emacs-re="emacs-clean && emacs-compile"
-alias emacs='emacs -nw'
 alias grep='grep --color=auto -I --line-buffered'
 alias killmosh='pgrep mosh-server | grep -v $(ps -o ppid --no-headers $$) | xargs kill &> /dev/null || true'
 alias lines='cat `find . -type f` | wc -l'
@@ -150,6 +149,15 @@ csv_pp() {
         DELIMITER=","
     fi
     column -s"$DELIMITER" -t < "$1" | less -#2 -N -S
+}
+
+emacs() {
+    if [[ "$*" == *"--daemon"* || "$*" == *"--help"* || "$*" == *"--version"* || "$*" == *"--batch"* ]]
+    then
+        command emacs -nw "$@"
+    else
+        emacsclient --tty -c -nw -a= --socket-name=$(whoami) "$@"
+    fi
 }
 
 source-if-exists ~/.bash_aliases
