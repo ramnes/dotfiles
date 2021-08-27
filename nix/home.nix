@@ -22,6 +22,7 @@
     jq
     kubectl
     mosh
+    nodejs
     python39
     python39.pkgs.pip
     python39.pkgs.setuptools
