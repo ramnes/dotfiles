@@ -63,10 +63,10 @@ fi
 title "Bootstrapping Emacs"
 shopt -s expand_aliases
 source ~/.bashrc
-pip install --user -I ipython
-pip install --user -I flake8
-pip install --user -I black black-macchiato
-pip install --user -I ipdb
+pip3 install --user -I ipython
+pip3 install --user -I flake8
+pip3 install --user -I black black-macchiato
+pip3 install --user -I ipdb
 go get github.com/nsf/gocode
 go get golang.org/x/tools/cmd/goimports
 emacs-re
