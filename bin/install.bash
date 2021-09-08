@@ -40,8 +40,6 @@ install emacs/bin/emacs ~/.local/bin/emacs
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
-install nix/home.nix ~/.config/nixpkgs/home.nix
-install nix/darwin-configuration.nix ~/.nixpkgs/darwin-configuration.nix
 install npm ~/.npmrc
 install qtile ~/.config/qtile
 install readline ~/.inputrc
