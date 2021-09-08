@@ -165,6 +165,10 @@ source-if-exists ~/.kctx.bash
 source-if-exists ~/.kns.bash
 source-if-exists ~/.kt.bash
 source-if-exists /usr/share/bash-completion/bash_completion
+for completion in /opt/homebrew/etc/bash_completion.d/*
+do
+    source-if-exists "$completion"
+done
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
