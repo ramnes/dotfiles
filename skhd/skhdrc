@@ -4,6 +4,7 @@ ctrl - u : bash ${HOME}/.config/skhd/scripts/chrome.sh > /dev/null
 ctrl - backspace : yabai -m window --close
 ctrl - space : yabai -m window --toggle zoom-fullscreen
 ctrl - s : yabai -m window --toggle zoom-parent 
+ctrl - f : yabai -m window --toggle float; yabai -m window --grid 5:5:1:1:3:3; yabai -m window --focus "$(yabai -m query --windows --window | jq -er .id)"
 
 ctrl - up : yabai -m window --focus prev 2&> /dev/null || yabai -m window --focus last
 ctrl - down : yabai -m window --focus next 2&> /dev/null || yabai -m window --focus first
