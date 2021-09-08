@@ -9,7 +9,7 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=-1
 export HISTSIZE=-1
 export LS_COLORS="or=41;01:mi=41;01"
-export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/heroku/bin:/opt/bin/:/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/Library/Python/3.9/bin:$HOME/.cargo/bin:$GOPATH/bin:/usr/local/heroku/bin:/opt/bin/:/opt/homebrew/opt/coreutils/libexec/gnubin:/opt/homebrew/bin:$PATH"
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONBREAKPOINT="ipdb.set_trace"
 export TERM="xterm-256color"
