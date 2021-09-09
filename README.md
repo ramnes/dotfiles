@@ -6,6 +6,7 @@ They configure:
 * `git`
 * `ssh`
 * `qtile`
+* `yabai`
 * `roxterm`
 * `bash`
 * `emacs`
@@ -25,6 +26,7 @@ They use:
 * `redshift`
 * `gnome-screenshot`
 * `i3lock`
+* `jq`
 
 They bundle:
 * `context-color`, that gives a different color for each output of a command
