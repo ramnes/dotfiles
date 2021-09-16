@@ -27,6 +27,7 @@ They use:
 * `gnome-screenshot`
 * `i3lock`
 * `jq`
+* `shpotify`
 
 They bundle:
 * `context-color`, that gives a different color for each output of a command
