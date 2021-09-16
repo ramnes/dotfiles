@@ -25,3 +25,5 @@ ctrl - home : spotify prev
 ctrl - end : spotify next
 ctrl - pageup : spotify vol up
 ctrl - pagedown : spotify vol down
+
+f14 : pmset displaysleepnow
