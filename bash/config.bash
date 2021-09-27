@@ -17,6 +17,7 @@ export VISUAL=emacs
 PATH="/opt/bin/:$PATH"
 PATH="/opt/homebrew/bin:$PATH"
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
