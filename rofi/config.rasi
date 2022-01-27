@@ -7,7 +7,6 @@ configuration {
     matching: "normal";
     separator-style: "none";
     fake-transparency: true;
-    theme: "~/.config/rofi/theme.rasi";
     display-run: "run: ";
     display-ssh: "ssh: ";
     display-drun: "drun: ";
@@ -15,7 +14,7 @@ configuration {
     display-keys: "keys: ";
     kb-primary-paste: "Shift+Insert";
     kb-secondary-paste: "Control+y";
-    kb-clear-line: "Control+l";
+    kb-clear-line: "";
     kb-remove-word-back: "Control+w,Control+BackSpace";
     kb-select-1: "Ctrl+1";
     kb-select-2: "Ctrl+2";
@@ -28,3 +27,5 @@ configuration {
     kb-select-9: "Ctrl+9";
     kb-select-10: "Ctrl+0";
 }
+
+@theme "~/.config/rofi/theme.rasi"
