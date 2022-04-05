@@ -13,7 +13,7 @@
         ds = diff --cached
         dsc = !GIT_PAGER=cat git ds
         force = push --force-with-lease
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
+        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date-order --date=short
         rh = !git stash && git reset --hard origin/`git symbolic-ref --short HEAD`
         st = fetch --prune origin +refs/tags/*:refs/tags/*
         sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
