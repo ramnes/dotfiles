@@ -8,6 +8,7 @@ export GOPATH="$HOME/.go"
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=-1
 export HISTSIZE=-1
+export LESS=R
 export LS_COLORS="or=41;01:mi=41;01"
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONBREAKPOINT="ipdb.set_trace"
