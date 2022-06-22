@@ -1,6 +1,7 @@
 #!/bin/bash
 stty ixany
 stty ixoff -ixon
+set -o ignoreeof
 
 export EDITOR="emacs -nw"
 export GIT_EDITOR="emacs -nw"
