@@ -12,6 +12,7 @@ export HISTFILESIZE=-1
 export HISTSIZE=-1
 export LESS=R
 export LS_COLORS="or=41;01:mi=41;01"
+export NVM_DIR="$HOME/.nvm"
 export PYTHONDONTWRITEBYTECODE=1
 export PYTHONBREAKPOINT="ipdb.set_trace"
 export TERM="xterm-256color"
@@ -177,6 +178,7 @@ source-if-exists ~/.git-prompt.sh
 source-if-exists ~/.kctx.bash
 source-if-exists ~/.kns.bash
 source-if-exists ~/.kt.bash
+source-if-exists ~/.nvm/nvm.sh
 source-if-exists /usr/share/bash-completion/bash_completion
 source-if-exists /opt/homebrew/etc/profile.d/bash_completion.sh
 
