@@ -6,6 +6,7 @@ set -o ignoreeof
 export EDITOR="emacs -nw"
 export GIT_EDITOR="emacs -nw"
 export GOPATH="$HOME/.go"
+export KREW_ROOT="$HOME/.krew"
 export HISTCONTROL=ignoredups:ignorespace
 export HISTFILESIZE=-1
 export HISTSIZE=-1
@@ -22,6 +23,7 @@ PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
+PATH="$KREW_ROOT/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/Library/Python/3.9/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
