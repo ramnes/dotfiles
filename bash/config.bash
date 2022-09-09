@@ -187,3 +187,4 @@ complete -C 'aws_completer' aws
 source <(qovery completion bash 2> /dev/null)
 source <(pulumi gen-completion bash 2> /dev/null)
 source <(ngrok completion 2> /dev/null)
+export PATH=/Users/ramnes/.meteor:$PATH
