@@ -26,8 +26,11 @@ PATH="/usr/local/heroku/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 PATH="$KREW_ROOT/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
-PATH="$HOME/Library/Python/3.9/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
+
+for path in $HOME/Library/Python/*; do
+    PATH="$path/bin:$PATH";
+done
 
 CONTEXT_COLOR="$(context-color -p)"
 FAIL_COLOR="\\[$(tput setaf 1)\\]"
