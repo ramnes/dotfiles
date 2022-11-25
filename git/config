@@ -13,6 +13,7 @@
         dfc = !GIT_PAGER=cat git df
         ds = diff --cached
         dsc = !GIT_PAGER=cat git ds
+        fixup = !sh -xc 'REV=$(git rev-parse "${@: -1}") && set -- "${@: 1: $#-1}" && git commit $@ --fixup $REV && GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i $REV^' -
         force = push --force-with-lease
         lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date-order --date=short
         rh = !git stash && git reset --hard origin/`git symbolic-ref --short HEAD`
