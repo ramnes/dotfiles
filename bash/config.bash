@@ -150,7 +150,7 @@ diff() {
 
 hl() {
     # shellcheck disable=SC2145
-    grep -E "$@|"
+    sed "s/\($@\)/$(tput setab 1)\1$(tput sgr0)/"
 }
 
 kt() {
