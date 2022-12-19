@@ -26,6 +26,7 @@ PATH="/usr/local/heroku/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 PATH="$KREW_ROOT/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
+PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 
 for path in $HOME/Library/Python/*; do
