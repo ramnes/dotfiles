@@ -53,3 +53,5 @@
         newHighlight = "green bold 22"
 [init]
         defaultBranch = main
+[advice]
+        skippedCherryPicks = false
