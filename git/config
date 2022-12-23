@@ -51,6 +51,8 @@
         oldHighlight = "red bold 52"
         newNormal = "green bold dim"
         newHighlight = "green bold 22"
+[pull]
+        ff = only
 [init]
         defaultBranch = main
 [advice]
