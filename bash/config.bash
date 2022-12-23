@@ -28,6 +28,7 @@ PATH="$KREW_ROOT/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.krew/bin:$PATH"
 
 for path in $HOME/Library/Python/*; do
     PATH="$path/bin:$PATH";
