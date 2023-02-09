@@ -23,5 +23,7 @@ yabai -m signal --add event=window_destroyed active=yes action="yabai -m query -
 # Rules
 yabai -m rule --add app="^Spotify$" display=^2
 yabai -m rule --add app='^System Preferences$' manage=off
+yabai -m rule --add app='^System Settings$' manage=off
 yabai -m rule --add app='^Docker Desktop$' manage=off
 yabai -m rule --add app='^SteelSeries GG Client$' manage=off
+yabai -m rule --add app='^GIMP' title!='(^GNU|GIMP$)' manage=off
