@@ -194,3 +194,7 @@ source <(qovery completion bash 2> /dev/null)
 source <(pulumi gen-completion bash 2> /dev/null)
 source <(ngrok completion 2> /dev/null)
 export PATH=/Users/ramnes/.meteor:$PATH
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    ulimit -S -n unlimited
+fi
