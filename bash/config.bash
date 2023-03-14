@@ -180,6 +180,7 @@ emacs() {
 }
 
 source-if-exists ~/.bash_aliases
+source-if-exists ~/.fzf.bash
 source-if-exists ~/.git-prompt.sh
 source-if-exists ~/.kctx.bash
 source-if-exists ~/.kns.bash
@@ -190,6 +191,8 @@ source-if-exists /opt/homebrew/etc/profile.d/bash_completion.sh
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
+source <(mcfly init bash 2> /dev/null)
+source <(mcfly-fzf init bash 2> /dev/null)
 source <(qovery completion bash 2> /dev/null)
 source <(pulumi gen-completion bash 2> /dev/null)
 source <(ngrok completion 2> /dev/null)
