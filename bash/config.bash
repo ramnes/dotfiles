@@ -7,7 +7,7 @@ export EDITOR="emacs -nw"
 export GIT_EDITOR="emacs -nw"
 export GOPATH="$HOME/.go"
 export KREW_ROOT="$HOME/.krew"
-export HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=-1
 export HISTSIZE=-1
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -201,3 +201,5 @@ export PATH=/Users/ramnes/.meteor:$PATH
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ulimit -S -n unlimited
 fi
+
+tac "$HISTFILE" | awk '!x[$0]++' > /tmp/histfile && tac /tmp/histfile > "$HISTFILE"
