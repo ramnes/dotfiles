@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import os
 import sys
 import IPython
 
@@ -7,6 +8,7 @@ python_version = sys.version.split(' ', 1)[0]
 ipython_version = IPython.__version__
 
 c = get_config()
+c.BaseIPythonApplication.extra_config_file = f"{os.getcwd()}/.ipython_config.py"
 c.TerminalInteractiveShell.separate_in = ''
 c.TerminalInteractiveShell.banner1 = banner.format(ipython_version, python_version)
 
