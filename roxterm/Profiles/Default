@@ -13,3 +13,6 @@ scroll_on_output=0
 scroll_on_keystroke=1
 disable_tab_menu_shortcuts=1
 bold_is_bright=1
+hspacing=0
+vspacing=10
+limit_scrollback=1
