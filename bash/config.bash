@@ -66,6 +66,21 @@ set-venv() {
     fi
 }
 
+set-nvm() {
+    if [[ -f ".nvmrc" ]] && [ ! "$AUTO_USED_NVMRC" ];
+    then
+        echo-and-run nvm use
+        AUTO_USED_NVMRC="$(pwd)"
+        export AUTO_USED_NVMRC
+    elif [ "$AUTO_USED_NVMRC" ] \
+             && { [[ ! "$(pwd)" =~ $AUTO_USED_NVMRC ]] \
+                      || [[ ! -f "$AUTO_USED_NVMRC/.nvmrc" ]]; }
+    then
+        echo-and-run nvm use default
+        unset AUTO_USED_NVMRC
+    fi
+}
+
 set-prompt() {
     # shellcheck disable=SC2181
     if [[ "$?" != 0 ]]
@@ -89,6 +104,14 @@ set-prompt() {
         venv=""
     fi
 
+    set-nvm
+    if [[ "$AUTO_USED_NVMRC" ]]
+    then
+        nvm="\\[\\e[38;5;242m\\]⛶ $(node --version ) "
+    else
+        nvm=""
+    fi
+
     if [[ -n "$(type -t __git_ps1)" ]]
     then
         git="\\[\\e[38;5;242m\\]$(__git_ps1 '⎇ %s ')"
@@ -96,7 +119,7 @@ set-prompt() {
         git=""
     fi
 
-    PS1="$user$at$host $jobs $path $venv$git\\[\\e[0m\\]"
+    PS1="$user$at$host $jobs $path $venv$nvm$git\\[\\e[0m\\]"
 }
 
 load-env() {
