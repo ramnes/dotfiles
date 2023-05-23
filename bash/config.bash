@@ -30,6 +30,7 @@ PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.emacs.d/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.krew/bin:$PATH"
+PATH="$HOME/.meteor:$PATH"
 
 for path in $HOME/Library/Python/*; do
     PATH="$path/bin:$PATH";
@@ -220,7 +221,6 @@ source <(mcfly-fzf init bash 2> /dev/null)
 source <(qovery completion bash 2> /dev/null)
 source <(pulumi gen-completion bash 2> /dev/null)
 source <(ngrok completion 2> /dev/null)
-export PATH=/Users/ramnes/.meteor:$PATH
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ulimit -S -n unlimited
