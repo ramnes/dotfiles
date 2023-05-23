@@ -69,14 +69,14 @@ set-venv() {
 set-nvm() {
     if [[ -f ".nvmrc" ]] && [ ! "$AUTO_USED_NVMRC" ];
     then
-        echo-and-run nvm use
+        echo-and-run nvm use --silent
         AUTO_USED_NVMRC="$(pwd)"
         export AUTO_USED_NVMRC
     elif [ "$AUTO_USED_NVMRC" ] \
              && { [[ ! "$(pwd)" =~ $AUTO_USED_NVMRC ]] \
                       || [[ ! -f "$AUTO_USED_NVMRC/.nvmrc" ]]; }
     then
-        echo-and-run nvm use default
+        echo-and-run nvm use default --silent
         unset AUTO_USED_NVMRC
     fi
 }
