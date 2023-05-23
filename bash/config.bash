@@ -211,6 +211,7 @@ source-if-exists ~/.kt.bash
 source-if-exists ~/.nvm/nvm.sh
 source-if-exists /usr/share/bash-completion/bash_completion
 source-if-exists /opt/homebrew/etc/profile.d/bash_completion.sh
+source-if-exists $NVM_DIR/bash_completion
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
