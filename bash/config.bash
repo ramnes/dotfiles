@@ -107,7 +107,7 @@ set-prompt() {
     set-nvm
     if [[ "$AUTO_USED_NVMRC" ]]
     then
-        nvm="\\[\\e[38;5;242m\\]⛶ $(node --version ) "
+        nvm="\\[\\e[38;5;242m\\]$(node --version ) "
     else
         nvm=""
     fi
