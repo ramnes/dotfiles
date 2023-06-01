@@ -38,6 +38,7 @@ install gpg-agent ~/.gnupg/gpg-agent.conf
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
+install pip ~/.config/pip/pip.conf
 install qtile ~/.config/qtile
 install readline ~/.inputrc
 install rofi ~/.config/rofi
