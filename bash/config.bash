@@ -4,6 +4,7 @@ stty ixoff -ixon
 set -o ignoreeof
 
 export EDITOR="emacs -nw"
+export GPG_TTY="$(tty)"
 export GIT_EDITOR="emacs -nw"
 export GOPATH="$HOME/.go"
 export KREW_ROOT="$HOME/.krew"

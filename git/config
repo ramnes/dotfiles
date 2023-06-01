@@ -4,6 +4,7 @@
 [user]
         name = ramnes
         email = contact@ramnes.eu
+        signingkey = 99CCA84E2C8C74F32E12AD538C1702070803487A
 [alias]
         aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
         autosquash = !GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i
@@ -57,3 +58,5 @@
         defaultBranch = main
 [advice]
         skippedCherryPicks = false
+[commit]
+        gpgsign = true
