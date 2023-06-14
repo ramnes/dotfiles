@@ -1,62 +1,62 @@
 [core]
-        editor = emacs
-        excludesfile = ~/.gitignore
+	editor = emacs
+	excludesfile = ~/.gitignore
 [user]
-        name = ramnes
-        email = contact@ramnes.eu
-        signingkey = 99CCA84E2C8C74F32E12AD538C1702070803487A
+	name = ramnes
+	email = contact@ramnes.eu
+	signingkey = 99CCA84E2C8C74F32E12AD538C1702070803487A
 [alias]
-        aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
-        autosquash = !GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i
-        conflicts = diff --name-only --diff-filter=U
-        dc = !GIT_PAGER=cat git diff
-        amend = commit --amend --no-edit
-        df = diff HEAD
-        dfc = !GIT_PAGER=cat git df
-        ds = diff --cached
-        dsc = !GIT_PAGER=cat git ds
-        fixup = !sh -xc 'REV=$(git rev-parse "${@: -1}") && set -- "${@: 1: $#-1}" && git commit $@ --fixup $REV && GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i $REV^' -
-        force = push --force-with-lease
-        lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date-order --date=short
-        rh = !git stash && git reset --hard origin/`git symbolic-ref --short HEAD`
-        st = fetch --prune origin +refs/tags/*:refs/tags/*
-        sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+	autosquash = !GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i
+	conflicts = diff --name-only --diff-filter=U
+	dc = !GIT_PAGER=cat git diff
+	amend = commit --amend --no-edit
+	df = diff HEAD
+	dfc = !GIT_PAGER=cat git df
+	ds = diff --cached
+	dsc = !GIT_PAGER=cat git ds
+	fixup = !sh -xc 'REV=$(git rev-parse "${@: -1}") && set -- "${@: 1: $#-1}" && git commit $@ --fixup $REV && GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i $REV^' -
+	force = push --force-with-lease
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr, %cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date-order --date=short
+	rh = !git stash && git reset --hard origin/`git symbolic-ref --short HEAD`
+	st = fetch --prune origin +refs/tags/*:refs/tags/*
+	sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [push]
-        default = current
-        followTags = true
-        recurseSubmodules = check
+	default = current
+	followTags = true
+	recurseSubmodules = check
 [clean]
-        requireForce = false
+	requireForce = false
 [tag]
-        sort = version:refname
+	sort = version:refname
 [help]
-        autocorrect = -1
+	autocorrect = -1
 [rebase]
-        autosquash = true
-        autostash = true
+	autosquash = true
+	autostash = true
 [status]
 	showUntrackedFiles = all
 [pager]
-        diff = diff-highlight | less
-        log = diff-highlight | less
-        show = diff-highlight | less
-        branch = false
-        grep = false
+	diff = diff-highlight | less
+	log = diff-highlight | less
+	show = diff-highlight | less
+	branch = false
+	grep = false
 [color "diff"]
-        old = "red bold"
-        new = "green bold"
-        whitespace = "red reverse"
-        meta = yellow
+	old = "red bold"
+	new = "green bold"
+	whitespace = "red reverse"
+	meta = yellow
 [color "diff-highlight"]
-        oldNormal = "red bold dim"
-        oldHighlight = "red bold 52"
-        newNormal = "green bold dim"
-        newHighlight = "green bold 22"
+	oldNormal = "red bold dim"
+	oldHighlight = "red bold 52"
+	newNormal = "green bold dim"
+	newHighlight = "green bold 22"
 [pull]
-        ff = only
+	ff = only
 [init]
-        defaultBranch = main
+	defaultBranch = main
 [advice]
-        skippedCherryPicks = false
+	skippedCherryPicks = false
 [commit]
-        gpgsign = true
+	gpgsign = true
