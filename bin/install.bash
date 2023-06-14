@@ -35,6 +35,7 @@ install contrib/user-dirs.dirs ~/.config/user-dirs.dirs
 install curl ~/.curlrc
 install emacs ~/.emacs.d
 install gpg-agent ~/.gnupg/gpg-agent.conf
+install git/config ~/.gitconfig
 install git/ignore ~/.gitignore
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py

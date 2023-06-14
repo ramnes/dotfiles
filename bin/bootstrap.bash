@@ -8,9 +8,6 @@ function title() {
 title "Installing dotfiles"
 ./bin/install.bash && source ~/.bashrc 2> /dev/null
 
-title "Bootstrapping Git"
-cp -i git/config ~/.gitconfig
-
 title "Bootstrapping SSH"
 mkdir -p ~/.ssh/connections
 chmod 700 ~/.ssh
