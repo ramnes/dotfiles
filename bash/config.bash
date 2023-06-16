@@ -151,6 +151,7 @@ shopt -s histappend
 alias activate='. .venv/bin/activate 2>/dev/null || . .env/bin/activate 2>/dev/null'
 alias clean='rm -vf $(find . -name "*~" -or -name "*.pyc" -or -name "*.pyo" -or -name "#*#" \
              -or -name "*.class" -or -name "*_flymake.py" 2> /dev/null)'
+alias compose="docker compose --ansi always"
 alias dog='pygmentize -g'
 alias emacs-clean='rm -vf `find ~/.emacs.d/ | grep \.elc`'
 alias emacs-re="emacs-clean && emacs-compile"
@@ -167,6 +168,7 @@ alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo -E '
+alias spacer="command spacer --after 30 -d' ' -p1"
 
 cd() {
     builtin cd "$@" && echo-and-run ls
