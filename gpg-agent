@@ -1,1 +1,1 @@
-pinentry-program /usr/bin/pinentry-tty
+pinentry-program pinentry-tty
