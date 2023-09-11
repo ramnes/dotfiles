@@ -1,0 +1,3 @@
+--theme="Nord"
+--pager="less --RAW-CONTROL-CHARS --quit-if-one-screen --mouse"
+--style="numbers,rule,snip"
