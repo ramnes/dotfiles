@@ -139,7 +139,7 @@ reload-history() {
     history -r
 }
 
-PROMPT_COMMAND="set-prompt; load-env; set-title; reload-history"
+PROMPT_COMMAND="set-prompt; load-env; set-title; reload-history; stty sane"
 
 shopt -s autocd
 shopt -s checkwinsize
