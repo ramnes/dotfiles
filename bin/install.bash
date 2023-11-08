@@ -38,6 +38,7 @@ install emacs ~/.emacs.d
 install gpg-agent ~/.gnupg/gpg-agent.conf
 install git/config ~/.gitconfig
 install git/ignore ~/.gitignore
+install gtk/gtk3.css ~/.config/gtk-3.0/gtk.css
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
 install pip ~/.config/pip/pip.conf
