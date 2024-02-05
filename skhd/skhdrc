@@ -21,9 +21,10 @@ ctrl + cmd - left : yabai -m window --resize right:-50:0 2&> /dev/null || yabai 
 ctrl + cmd - right : yabai -m window --resize right:50:0 2&> /dev/null || yabai -m window --resize left:50:0
 
 ctrl - insert : spotify pause
+ctrl - delete : [[ "Vol, is mute: false" == $(m volume ismute) ]] && m volume mute || m volume unmute
 ctrl - home : spotify prev
 ctrl - end : spotify next
-ctrl - pageup : spotify vol up
-ctrl - pagedown : spotify vol down
+ctrl - pageup : m volume up
+ctrl - pagedown : m volume down
 
 f14 : pmset displaysleepnow
