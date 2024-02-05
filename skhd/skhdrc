@@ -1,3 +1,6 @@
+ctrl + cmd - r : yabai --restart-service; skhd --restart-service
+ctrl + shift - r : skhd --restart-service
+
 ctrl - return : bash ${HOME}/.config/skhd/scripts/iterm2.sh > /dev/null
 ctrl - u : bash ${HOME}/.config/skhd/scripts/chrome.sh > /dev/null
 
