@@ -24,6 +24,7 @@ PATH="/opt/bin/:$PATH"
 PATH="/opt/homebrew/bin:$PATH"
 PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
+PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 PATH="/usr/local/heroku/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 PATH="$KREW_ROOT/bin:$PATH"
@@ -33,7 +34,7 @@ PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.krew/bin:$PATH"
 PATH="$HOME/.meteor:$PATH"
 
-for path in $HOME/Library/Python/*; do
+for path in $HOME/Library/Python/* /opt/homebrew/lib/ruby/gems/*; do
     PATH="$path/bin:$PATH";
 done
 
