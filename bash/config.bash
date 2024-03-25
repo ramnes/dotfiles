@@ -19,6 +19,7 @@ export PYTHONDONTWRITEBYTECODE=1
 export PYTHONBREAKPOINT="ipdb.set_trace"
 export TERM="xterm-256color"
 export VISUAL=emacs
+export _ZO_ECHO=1
 
 PATH="/opt/bin/:$PATH"
 PATH="/opt/homebrew/bin:$PATH"
@@ -230,6 +231,7 @@ source <(mcfly-fzf init bash 2> /dev/null)
 source <(qovery completion bash 2> /dev/null)
 source <(pulumi gen-completion bash 2> /dev/null)
 source <(ngrok completion 2> /dev/null)
+source <(zoxide init --cmd cd bash)
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ulimit -S -n unlimited
