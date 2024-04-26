@@ -232,6 +232,7 @@ source <(qovery completion bash 2> /dev/null)
 source <(pulumi gen-completion bash 2> /dev/null)
 source <(ngrok completion 2> /dev/null)
 source <(zoxide init --cmd cd bash)
+source <(brew shellenv 2> /dev/null)
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ulimit -S -n unlimited
