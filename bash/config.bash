@@ -213,7 +213,6 @@ emacs() {
 }
 
 source-if-exists ~/.bash_aliases
-source-if-exists ~/.fzf.bash
 source-if-exists ~/.git-prompt.sh
 source-if-exists ~/.kctx.bash
 source-if-exists ~/.kns.bash
@@ -226,6 +225,8 @@ source-if-exists $NVM_DIR/bash_completion
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
+
+source <(fzf --bash 2> /dev/null)
 source <(mcfly init bash 2> /dev/null)
 source <(mcfly-fzf init bash 2> /dev/null)
 source <(qovery completion bash 2> /dev/null)
