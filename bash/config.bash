@@ -21,22 +21,24 @@ export TERM="xterm-256color"
 export VISUAL=emacs
 export _ZO_ECHO=1
 
-PATH="/opt/bin/:$PATH"
-PATH="/opt/homebrew/bin:$PATH"
-PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
-PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-PATH="/usr/local/heroku/bin:$PATH"
-PATH="$GOPATH/bin:$PATH"
-PATH="$KREW_ROOT/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
-PATH="$HOME/.emacs.d/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.krew/bin:$PATH"
-PATH="$HOME/.meteor:$PATH"
-
-for path in $HOME/Library/Python/* /opt/homebrew/lib/ruby/gems/*; do
-    PATH="$path/bin:$PATH";
+# shellcheck disable=SC2206
+paths=(
+    /opt/homebrew/bin
+    /opt/homebrew/opt/coreutils/libexec/gnubin
+    /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    /opt/homebrew/opt/ruby/bin
+    /opt/homebrew/lib/ruby/gems/*/bin
+    /usr/local/heroku/bin
+    $GOPATH/bin
+    $KREW_ROOT/bin
+    $HOME/.cargo/bin
+    $HOME/.emacs.d/bin
+    $HOME/.local/bin
+    $HOME/.krew/bin
+    $HOME/Library/Python/*/bin
+)
+for path in "${paths[@]}"; do
+    PATH="$path:$PATH"
 done
 
 CONTEXT_COLOR="$(context-color -p)"
@@ -212,27 +214,38 @@ emacs() {
     fi
 }
 
-source-if-exists ~/.bash_aliases
-source-if-exists ~/.git-prompt.sh
-source-if-exists ~/.kctx.bash
-source-if-exists ~/.kns.bash
-source-if-exists ~/.kt.bash
-source-if-exists ~/.nvm/nvm.sh
-source-if-exists /usr/share/bash-completion/bash_completion
-source-if-exists /opt/homebrew/etc/profile.d/bash_completion.sh
-source-if-exists /opt/homebrew/share/google-cloud-sdk/path.bash.inc
+files=(
+    ~/.bash_aliases
+    ~/.git-prompt.sh
+    ~/.kctx.bash
+    ~/.kns.bash
+    ~/.kt.bash
+    ~/.nvm/nvm.sh
+    /usr/share/bash-completion/bash_completion
+    /opt/homebrew/etc/profile.d/bash_completion.sh
+    /opt/homebrew/share/google-cloud-sdk/path.bash.inc
+)
+for file in "${files[@]}"; do
+    source-if-exists "$file"
+done
+
+commands=(
+    "fzf --bash"
+    "mcfly init bash"
+    "mcfly-fzf init bash"
+    "qovery completion bash"
+    "pulumi gen-completion bash"
+    "ngrok completion"
+    "zoxide init --cmd cd bash"
+    "brew shellenv"
+)
+for command in "${commands[@]}"; do
+    # shellcheck disable=SC1090
+    source <($command 2> /dev/null)
+done
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
-
-source <(fzf --bash 2> /dev/null)
-source <(mcfly init bash 2> /dev/null)
-source <(mcfly-fzf init bash 2> /dev/null)
-source <(qovery completion bash 2> /dev/null)
-source <(pulumi gen-completion bash 2> /dev/null)
-source <(ngrok completion 2> /dev/null)
-source <(zoxide init --cmd cd bash)
-source <(brew shellenv 2> /dev/null)
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     ulimit -S -n unlimited
