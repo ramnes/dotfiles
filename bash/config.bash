@@ -225,20 +225,29 @@ for file in "${files[@]}"; do
     source-if-exists "$file"
 done
 
-commands=(
-    "fzf --bash"
-    "mcfly init bash"
-    "mcfly-fzf init bash"
-    "qovery completion bash"
-    "pulumi gen-completion bash"
-    "ngrok completion"
-    "zoxide init --cmd cd bash"
-    "brew shellenv"
-)
-for command in "${commands[@]}"; do
-    # shellcheck disable=SC1090
-    source <($command 2> /dev/null)
-done
+bash-re() {
+    rm -f ~/.bashrc-contrib
+    commands=(
+        "fzf --bash"
+        "mcfly init bash"
+        "mcfly-fzf init bash"
+        "qovery completion bash"
+        "pulumi gen-completion bash"
+        "ngrok completion"
+        "zoxide init --cmd cd bash"
+        "brew shellenv"
+    )
+    for command in "${commands[@]}"; do
+        # shellcheck disable=SC1090
+        echo-and-run "$command >> ~/.bashrc-contrib"
+    done
+}
+
+if [[ ! -f ~/.bashrc-contrib ]]
+then
+    bash-re
+fi
+source ~/.bashrc-contrib
 
 complete -C /usr/bin/terraform terraform
 complete -C 'aws_completer' aws
