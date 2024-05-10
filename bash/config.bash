@@ -36,6 +36,7 @@ paths=(
     $HOME/.local/bin
     $HOME/.krew/bin
     $HOME/Library/Python/*/bin
+    $HOME/Library/pnpm/
 )
 for path in "${paths[@]}"; do
     PATH="$path:$PATH"
