@@ -8,7 +8,7 @@
 [alias]
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 	autosquash = !GIT_SEQUENCE_EDITOR=: git rebase --autosquash -i
-	conflicts = diff --name-only --diff-filter=U
+	conflicts = diff --name-only --diff-filter=U --relative
 	dc = !GIT_PAGER=cat git diff
 	amend = commit --amend --no-edit
 	df = diff HEAD
