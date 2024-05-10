@@ -60,3 +60,5 @@
 	skippedCherryPicks = false
 [commit]
 	gpgsign = true
+[fetch]
+	writeCommitGraph = true
