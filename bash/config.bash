@@ -174,10 +174,6 @@ alias reload='source ~/.bashrc'
 alias sudo='sudo -E '
 alias spacer="command spacer --after 30 -d' ' -p1"
 
-cd() {
-    builtin cd "$@" && echo-and-run ls
-}
-
 diff() {
     colordiff -Nu "$@" | diff-highlight
 }
