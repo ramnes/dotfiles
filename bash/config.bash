@@ -76,14 +76,14 @@ set-venv() {
 set-nvm() {
     if [[ -f ".nvmrc" ]] && [ ! "$AUTO_USED_NVMRC" ];
     then
-        echo-and-run nvm use --silent
+        fnm use
         AUTO_USED_NVMRC="$(pwd)"
         export AUTO_USED_NVMRC
     elif [ "$AUTO_USED_NVMRC" ] \
              && { [[ ! "$(pwd)" =~ $AUTO_USED_NVMRC ]] \
                       || [[ ! -f "$AUTO_USED_NVMRC/.nvmrc" ]]; }
     then
-        echo-and-run nvm use default --silent
+        fnm use default
         unset AUTO_USED_NVMRC
     fi
 }
@@ -217,7 +217,6 @@ files=(
     ~/.kctx.bash
     ~/.kns.bash
     ~/.kt.bash
-    ~/.nvm/nvm.sh
     /usr/share/bash-completion/bash_completion
     /opt/homebrew/etc/profile.d/bash_completion.sh
     /opt/homebrew/share/google-cloud-sdk/path.bash.inc
@@ -229,6 +228,7 @@ done
 bash-re() {
     rm -f ~/.bashrc-contrib
     commands=(
+        "fnm env"
         "fzf --bash"
         "mcfly init bash"
         "mcfly-fzf init bash"
