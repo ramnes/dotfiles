@@ -21,7 +21,6 @@ install colordiff ~/.colordiffrc
 install contrib/background.jpg ~/.background.jpg
 install contrib/context-color/context-color ~/.local/bin/context-color
 install contrib/diff-highlight ~/.local/bin/diff-highlight
-install contrib/git-prompt.sh ~/.git-prompt.sh
 install contrib/kubectx/completion/kubectx.bash ~/.kctx.bash
 install contrib/kubectx/completion/kubens.bash ~/.kns.bash
 install contrib/kubectx/kubectx ~/.local/bin/kctx

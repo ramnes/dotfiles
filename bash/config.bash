@@ -213,7 +213,6 @@ emacs() {
 
 files=(
     ~/.bash_aliases
-    ~/.git-prompt.sh
     ~/.kctx.bash
     ~/.kns.bash
     ~/.kt.bash
