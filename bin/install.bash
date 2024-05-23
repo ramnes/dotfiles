@@ -40,6 +40,7 @@ install git/ignore ~/.gitignore
 install gtk/gtk3.css ~/.config/gtk-3.0/gtk.css
 install htop ~/.config/htop/htoprc
 install ipython ~/.ipython/profile_default/ipython_config.py
+install iterm2 ~/.config/iterm2/preferences/com.googlecode.iterm2.plist
 install pip ~/.config/pip/pip.conf
 install qtile ~/.config/qtile
 install readline ~/.inputrc
