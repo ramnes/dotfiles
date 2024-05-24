@@ -37,3 +37,4 @@ pip3 install --user -I ipdb
 go get github.com/nsf/gocode
 go get golang.org/x/tools/cmd/goimports
 emacs-re
+emacs --load ~/.emacs.d/init.el --batch -f "copilot-install-server"
