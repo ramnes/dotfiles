@@ -42,9 +42,6 @@ for path in "${paths[@]}"; do
     PATH="$path:$PATH"
 done
 
-CONTEXT_COLOR="$(context-color -p)"
-FAIL_COLOR="\\[$(tput setaf 1)\\]"
-
 echo-and-run() {
     echo -e "$@"
     eval "$@"
@@ -57,6 +54,11 @@ source-if-exists() {
         source "$1"
     fi
 }
+
+source-if-exists ~/.bash_aliases
+
+CONTEXT_COLOR="$(context-color -p)"
+FAIL_COLOR="\\[$(tput setaf 1)\\]"
 
 set-venv() {
     if [[ -d ".venv" ]] && [ ! "$AUTO_SOURCED_VENV" ];
@@ -212,7 +214,6 @@ emacs() {
 }
 
 files=(
-    ~/.bash_aliases
     ~/.kctx.bash
     ~/.kns.bash
     ~/.kt.bash
