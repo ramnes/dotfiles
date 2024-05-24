@@ -1,6 +1,7 @@
 [core]
 	editor = emacs
 	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 [user]
 	name = ramnes
 	email = contact@ramnes.eu

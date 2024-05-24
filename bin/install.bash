@@ -35,6 +35,7 @@ install contrib/user-dirs.dirs ~/.config/user-dirs.dirs
 install curl ~/.curlrc
 install emacs ~/.emacs.d
 install gpg-agent ~/.gnupg/gpg-agent.conf
+install git/attributes ~/.gitattributes
 install git/config ~/.gitconfig
 install git/ignore ~/.gitignore
 install gtk/gtk3.css ~/.config/gtk-3.0/gtk.css
