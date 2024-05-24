@@ -3,5 +3,6 @@
 *.diff
 *_flymake.*
 *.pyc
+*.elc
 .venv
 .DS_Store
