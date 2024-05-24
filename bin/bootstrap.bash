@@ -27,9 +27,12 @@ else
     chsh -s "${bash_path}"
 fi
 
-title "Bootstrapping Emacs"
+title "Bootstrapping Bash"
 shopt -s expand_aliases
 source ~/.bashrc
+bash-re
+
+title "Bootstrapping Emacs"
 pip3 install --user -I ipython
 pip3 install --user -I flake8
 pip3 install --user -I black black-macchiato
