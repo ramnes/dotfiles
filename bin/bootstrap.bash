@@ -13,6 +13,10 @@ mkdir -p ~/.ssh/connections
 chmod 700 ~/.ssh
 cp -i ssh ~/.ssh/config
 
+title "Bootstrapping GPG"
+mkdir ~/.gnupg
+chmod 700 ~/.gnupg
+
 bash_path=$(which bash)
 title "Setting bash (${bash_path}) as the default shell"
 if finger $(whoami) | grep -q "${bash_path}"
