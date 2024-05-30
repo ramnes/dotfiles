@@ -22,6 +22,7 @@
 	rh = !git stash && git reset --hard origin/`git symbolic-ref --short HEAD`
 	st = fetch --prune origin +refs/tags/*:refs/tags/*
 	sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
+	root = rev-parse --show-toplevel
 [push]
 	default = current
 	followTags = true
