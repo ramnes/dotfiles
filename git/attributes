@@ -1,4 +1,5 @@
 *.svg text -diff
 *.pdf text -diff
 *.min.js text -diff
+*.min.css text -diff
 .yarn/releases/* text -diff
