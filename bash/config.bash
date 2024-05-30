@@ -230,6 +230,7 @@ bash-re() {
     commands=(
         "fnm env"
         "fzf --bash"
+        "gh completion -s bash"
         "mcfly init bash"
         "mcfly-fzf init bash"
         "qovery completion bash"
