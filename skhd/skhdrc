@@ -30,4 +30,4 @@ ctrl - end : spotify next
 ctrl - pageup : m volume up
 ctrl - pagedown : m volume down
 
-f14 : pmset displaysleepnow
+f14 : pmset sleepnow
