@@ -12,7 +12,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export HISTFILESIZE=-1
 export HISTSIZE=-1
 export HOMEBREW_NO_AUTO_UPDATE=1
-export LESS=R
+export LESS="-S -# 10"
 export LS_COLORS="or=41;01:mi=41;01"
 export NVM_DIR="$HOME/.nvm"
 export PYTHONDONTWRITEBYTECODE=1
