@@ -238,6 +238,7 @@ bash-re() {
         "ngrok completion"
         "zoxide init --cmd cd bash"
         "brew shellenv"
+        "mise activate bash"
     )
     for command in "${commands[@]}"; do
         # shellcheck disable=SC1090
