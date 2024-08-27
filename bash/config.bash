@@ -239,6 +239,7 @@ bash-re() {
         "zoxide init --cmd cd bash"
         "brew shellenv"
         "mise activate bash"
+        "kaf completion bash"
     )
     for command in "${commands[@]}"; do
         # shellcheck disable=SC1090
