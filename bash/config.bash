@@ -30,6 +30,7 @@ paths=(
     /opt/homebrew/opt/gnu-sed/libexec/gnubin
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/lib/ruby/gems/*/bin
+    /opt/homebrew/Cellar/libpq/*/bin
     /usr/local/heroku/bin
     $GOPATH/bin
     $KREW_ROOT/bin
