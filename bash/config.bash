@@ -265,7 +265,7 @@ then
 fi
 source ~/.bashrc-contrib
 
-complete -C /usr/bin/terraform terraform
+complete -C 'terraform' terraform
 complete -C 'aws_completer' aws
 complete -C 'gocomplete' go
 
