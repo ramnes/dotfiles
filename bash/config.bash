@@ -3,6 +3,7 @@ stty ixany
 stty ixoff -ixon
 set -o ignoreeof
 
+export AWS_PAGER=""
 export AWS_PROFILE="$(cat ~/.aws/current-profile)"
 export EDITOR="emacs -nw"
 export GPG_TTY="$(tty)"
