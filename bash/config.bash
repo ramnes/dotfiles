@@ -3,6 +3,7 @@ stty ixany
 stty ixoff -ixon
 set -o ignoreeof
 
+export AWS_PROFILE="$(cat ~/.aws/current-profile)"
 export EDITOR="emacs -nw"
 export GPG_TTY="$(tty)"
 export GIT_EDITOR="emacs -nw"
@@ -176,6 +177,15 @@ alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo -E '
 alias spacer="command spacer --after 30 -d' ' -p1"
+
+awsp() {
+    profile=$(aws configure list-profiles | sk --prompt "Choose active AWS profile:" -m --bind enter:deselect-all+accept --pre-select-items "$AWS_PROFILE")
+    if [[ "$profile" ]]
+    then
+        export AWS_PROFILE="$profile"
+        echo "$profile" > ~/.aws/current-profile
+    fi
+}
 
 diff() {
     colordiff -Nu "$@" | diff-highlight
