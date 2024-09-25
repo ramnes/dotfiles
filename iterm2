@@ -6,16 +6,10 @@
 	<array/>
 	<key>AlternateMouseScroll</key>
 	<true/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
+	<key>AlternateMouseScrollStringForDown</key>
+	<string></string>
+	<key>AlternateMouseScrollStringForUp</key>
+	<string></string>
 	<key>Command</key>
 	<string></string>
 	<key>Control</key>
@@ -30,9 +24,13 @@
 	<false/>
 	<key>DisableFullscreenTransparency</key>
 	<false/>
+	<key>DoubleReportScrollWheel</key>
+	<false/>
 	<key>EnableDivisionView</key>
 	<true/>
 	<key>EnableProxyIcon</key>
+	<false/>
+	<key>FastTrackpad</key>
 	<false/>
 	<key>GlobalKeyMap</key>
 	<dict>
@@ -112,6 +110,8 @@
 	<true/>
 	<key>HideTab</key>
 	<true/>
+	<key>HorizontalScrollingSensitivity</key>
+	<real>0.10000000149011612</real>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>LeftCommand</key>
@@ -942,6 +942,8 @@
 	</dict>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>ProportionalScrollWheelReporting</key>
+	<false/>
 	<key>RemapModifiersWithoutEventTap</key>
 	<true/>
 	<key>RightCommand</key>
@@ -950,6 +952,8 @@
 	<integer>3</integer>
 	<key>ScrollWheelAcceleration</key>
 	<real>2</real>
+	<key>SensitiveScrollWheel</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -960,6 +964,8 @@
 	<integer>5</integer>
 	<key>UseBorder</key>
 	<false/>
+	<key>UseModernScrollWheelAccumulator</key>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
