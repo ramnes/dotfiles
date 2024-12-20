@@ -159,6 +159,7 @@ shopt -s globstar
 shopt -s histappend
 
 alias activate='. .venv/bin/activate 2>/dev/null || . .env/bin/activate 2>/dev/null'
+alias gr='cd $(git root)'
 alias clean='rm -vf $(find . -name "*~" -or -name "*.pyc" -or -name "*.pyo" -or -name "#*#" \
              -or -name "*.class" -or -name "*_flymake.py" 2> /dev/null)'
 alias compose="docker compose --ansi always"
