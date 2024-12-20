@@ -180,6 +180,7 @@ alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
 alias sudo='sudo -E '
 alias spacer="command spacer --after 30 -d' ' -p1"
+alias tf="terraform"
 
 awsp() {
     profile=$(aws configure list-profiles | sk --prompt "Choose active AWS profile:" -m --bind enter:deselect-all+accept --pre-select-items "$AWS_PROFILE")
@@ -267,6 +268,7 @@ fi
 source ~/.bashrc-contrib
 
 complete -C 'terraform' terraform
+complete -C 'terraform' tf
 complete -C 'aws_completer' aws
 complete -C 'gocomplete' go
 
