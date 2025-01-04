@@ -277,3 +277,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 tac "$HISTFILE" | awk '!x[$0]++' > /tmp/histfile && tac /tmp/histfile > "$HISTFILE"
+
+# keep this at the bottom, it needs to be evaluated after `complete` commands
+export COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
