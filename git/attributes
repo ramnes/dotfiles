@@ -3,3 +3,7 @@
 *.min.js text -diff
 *.min.css text -diff
 .yarn/releases/* text -diff
+**/gen/**/*.* text -diff
+*.ipynb text -diff
+go.sum text -diff
+*.lock text -diff
