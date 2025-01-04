@@ -1,0 +1,121 @@
+[
+  {
+    "key": "cmd+a",
+    "command": "cursorLineStart"
+  },
+  {
+    "key": "cmd+e",
+    "command": "cursorLineEnd"
+  },
+  {
+    "key": "cmd+left",
+    "command": "cursorWordAccessibilityLeft"
+  },
+  {
+    "key": "cmd+right",
+    "command": "cursorWordAccessibilityRight"
+  },
+  {
+    "key": "cmd+space",
+    "command": "emacs-mcx.setMarkCommand"
+  },
+  {
+    "key": "cmd+g",
+    "command": "emacs-mcx.cancel"
+  },
+  {
+    "key": "cmd+/",
+    "command": "undo"
+  },
+  {
+    "key": "cmd+r",
+    "command": "emacs-mcx.isearchForward"
+  },
+  {
+    "key": "alt+s",
+    "command": "workbench.action.quickTextSearch"
+  },
+  {
+    "key": "cmd+l",
+    "command": "workbench.action.gotoLine"
+  },
+  {
+    "key": "alt+.",
+    "command": "editor.action.revealDefinition"
+  },
+  {
+    "key": "alt+shift+/",
+    "command": "editor.action.peekImplementation"
+  },
+  {
+    "key": "alt+f",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "alt+r",
+    "command": "editor.action.rename"
+  },
+  {
+    "key": "alt+backspace",
+    "command": "workbench.action.closeEditorsInGroup"
+  },
+  {
+    "key": "alt+enter",
+    "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "alt+left",
+    "command": "workbench.action.focusLeftGroup"
+  },
+  {
+    "key": "alt+right",
+    "command": "workbench.action.focusRightGroup"
+  },
+  {
+    "key": "alt+up",
+    "command": "workbench.action.focusAboveGroup"
+  },
+  {
+    "key": "alt+down",
+    "command": "workbench.action.focusBelowGroup"
+  },
+  {
+    "key": "cmd+down",
+    "command": "cursorMove",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "nextBlankLine"
+    }
+  },
+  {
+    "key": "cmd+up",
+    "command": "cursorMove",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "prevBlankLine"
+    }
+  },
+  {
+    "key": "cmd+shift+down",
+    "command": "cursorMove",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "nextBlankLine",
+      "select": true
+    }
+  },
+  {
+    "key": "cmd+shift+up",
+    "command": "cursorMove",
+    "when": "editorTextFocus",
+    "args": {
+      "to": "prevBlankLine",
+      "select": true
+    }
+  },
+  {
+    "key": "ctrl+x shift+=",
+    "command": "workbench.action.evenEditorWidths",
+    "when": "!terminalFocus"
+  }
+]

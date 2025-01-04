@@ -33,6 +33,8 @@ install contrib/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install contrib/tm ~/.local/bin/tm
 install contrib/user-dirs.dirs ~/.config/user-dirs.dirs
 install curl ~/.curlrc
+install cursor/keybindings.json "~/Library/Application Support/Cursor/User/keybindings.json"
+install cursor/settings.json "~/Library/Application Support/Cursor/User/settings.json"
 install emacs ~/.emacs.d
 install gpg-agent ~/.gnupg/gpg-agent.conf
 install git/attributes ~/.gitattributes
