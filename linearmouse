@@ -1,0 +1,67 @@
+{
+  "$schema" : "https:\/\/schema.linearmouse.app\/0.10.0",
+  "schemes" : [
+    {
+      "scrolling" : {
+        "reverse" : {
+          "vertical" : true
+        },
+        "distance" : "auto",
+        "acceleration" : 0.75,
+        "speed" : 20
+      },
+      "if" : {
+        "device" : {
+          "vendorID" : "0x1af3",
+          "category" : "mouse",
+          "productName" : "ZOWIE Gaming mouse",
+          "productID" : "0x1"
+        }
+      },
+      "buttons" : {
+        "clickDebouncing" : {
+          "timeout" : 140,
+          "buttons" : [
+            1,
+            2
+          ]
+        }
+      },
+      "pointer" : {
+        "disableAcceleration" : true,
+        "acceleration" : 1
+      }
+    },
+    {
+      "scrolling" : {
+        "acceleration" : 0.75,
+        "reverse" : {
+          "vertical" : true
+        },
+        "distance" : "auto",
+        "speed" : 20
+      },
+      "buttons" : {
+        "clickDebouncing" : {
+          "timeout" : 150,
+          "buttons" : [
+            1,
+            2
+          ]
+        }
+      },
+      "if" : {
+        "device" : {
+          "productID" : "0x1710",
+          "vendorID" : "0x1038",
+          "productName" : "SteelSeries Rival 300 Gaming Mouse",
+          "category" : "mouse"
+        }
+      },
+      "pointer" : {
+        "acceleration" : 1,
+        "disableAcceleration" : true
+      }
+    }
+  ]
+}
