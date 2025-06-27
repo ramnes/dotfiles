@@ -144,12 +144,7 @@ set-title() {
     echo -ne "\033]0;$(whoami)@$(hostname) :$(jobs | wc -l) $(dirs)\007"
 }
 
-reload-history() {
-    history -a
-    history -r
-}
-
-PROMPT_COMMAND="set-prompt; load-env; set-title; reload-history; stty sane"
+PROMPT_COMMAND="set-prompt; load-env; set-title; stty sane"
 
 shopt -s autocd
 shopt -s checkwinsize
