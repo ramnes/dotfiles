@@ -244,6 +244,9 @@ files=(
     /usr/share/bash-completion/bash_completion
     /opt/homebrew/etc/profile.d/bash_completion.sh
     /opt/homebrew/share/google-cloud-sdk/path.bash.inc
+    /Applications/OrbStack.app/Contents/Resources/completions/bash/docker.bash
+    /Applications/OrbStack.app/Contents/Resources/completions/bash/orbctl.bash
+    /Applications/OrbStack.app/Contents/Resources/completions/bash/kubectl.bash
 )
 for file in "${files[@]}"; do
     source-if-exists "$file"
