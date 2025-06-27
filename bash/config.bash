@@ -167,6 +167,7 @@ alias dog='pygmentize -g'
 alias emacs-clean='rm -vf `find ~/.emacs.d/ | grep \.elc`'
 alias emacs-re="emacs-clean && emacs-compile"
 alias grep='grep --color=auto -I --line-buffered'
+alias k="kubectl"
 alias killmosh='pgrep mosh-server | grep -v $(ps -o ppid --no-headers $$) | xargs kill &> /dev/null || true'
 alias lines='cat `find . -type f` | wc -l'
 alias loc='find . -not -path "*.git*" -not -path "*.venv*" -type f | xargs wc -l'
@@ -267,6 +268,7 @@ then
 fi
 source ~/.bashrc-contrib
 
+complete -F __start_kubectl k
 complete -C 'terraform' terraform
 complete -C 'terraform' tf
 complete -C 'aws_completer' aws
