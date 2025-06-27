@@ -228,6 +228,15 @@ emacs() {
     fi
 }
 
+__start_compose() {
+  COMP_WORDS=(docker compose "${COMP_WORDS[@]:1}")
+  COMP_CWORD=$((COMP_CWORD + 1))
+  COMP_LINE="docker compose ${COMP_LINE#compose }"
+  COMP_POINT=$((COMP_POINT + 7)) # length of "docker " added
+
+  __start_docker
+}
+
 files=(
     ~/.kctx.bash
     ~/.kns.bash
@@ -243,6 +252,7 @@ done
 bash-re() {
     rm -f ~/.bashrc-contrib
     commands=(
+        "docker completion bash"
         "fnm env"
         "fzf --bash"
         "gh completion -s bash"
@@ -269,6 +279,7 @@ fi
 source ~/.bashrc-contrib
 
 complete -F __start_kubectl k
+complete -F __start_compose compose
 complete -C 'terraform' terraform
 complete -C 'terraform' tf
 complete -C 'aws_completer' aws
