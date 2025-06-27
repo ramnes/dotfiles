@@ -250,10 +250,10 @@ bash-re() {
         "qovery completion bash"
         "pulumi gen-completion bash"
         "ngrok completion"
-        "zoxide init --cmd cd bash"
         "brew shellenv"
         "mise activate bash"
         "kaf completion bash"
+        "zoxide init --cmd cd bash"
     )
     for command in "${commands[@]}"; do
         # shellcheck disable=SC1090
