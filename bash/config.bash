@@ -28,6 +28,7 @@ paths=(
     /opt/homebrew/bin
     /opt/homebrew/opt/coreutils/libexec/gnubin
     /opt/homebrew/opt/gnu-sed/libexec/gnubin
+    /opt/homebrew/opt/mysql-client/bin
     /opt/homebrew/opt/ruby/bin
     /opt/homebrew/lib/ruby/gems/*/bin
     /opt/homebrew/Cellar/libpq/*/bin
