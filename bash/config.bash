@@ -1,6 +1,8 @@
 #!/bin/bash
-stty ixany
-stty ixoff -ixon
+if [[ -t 0 ]]; then
+    stty ixany
+    stty ixoff -ixon
+fi
 set -o ignoreeof
 
 export AWS_PAGER=""
