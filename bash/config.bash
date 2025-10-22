@@ -290,7 +290,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     ulimit -S -n unlimited
 fi
 
-tac "$HISTFILE" | awk '!x[$0]++' > /tmp/histfile && tac /tmp/histfile > "$HISTFILE"
+if [[ -n "$HISTFILE" && -f "$HISTFILE" ]]; then
+    tac "$HISTFILE" | awk '!x[$0]++' > /tmp/histfile && tac /tmp/histfile > "$HISTFILE"
+fi
 
 # keep this at the bottom, it needs to be evaluated after `complete` commands
 export COMP_WORDBREAKS=${COMP_WORDBREAKS//:}
