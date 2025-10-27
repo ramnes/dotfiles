@@ -24,10 +24,10 @@ ctrl + cmd - left : yabai -m window --resize right:-50:0 2&> /dev/null || yabai 
 ctrl + cmd - right : yabai -m window --resize right:50:0 2&> /dev/null || yabai -m window --resize left:50:0
 
 ctrl - insert : spotify pause
-ctrl - delete : [[ "Vol, is mute: false" == $(m volume ismute) ]] && m volume mute || m volume unmute
+ctrl - delete : [[ $(osascript -e 'get output muted of (get volume settings)') == "false" ]] && osascript -e "set volume output muted true" || osascript -e "set volume output muted false"
 ctrl - home : spotify prev
 ctrl - end : spotify next
-ctrl - pageup : m volume up
-ctrl - pagedown : m volume down
+ctrl - pageup : osascript -e "set volume output volume (get output volume of (get volume settings) +10)"
+ctrl - pagedown : osascript -e "set volume output volume (get output volume of (get volume settings) -10)"
 
 f14 : pmset sleepnow
