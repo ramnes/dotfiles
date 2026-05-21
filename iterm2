@@ -2,8 +2,30 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AIFeatureFunctionCalling</key>
+	<true/>
+	<key>AIFeatureHostedCodeInterpeter</key>
+	<true/>
+	<key>AIFeatureHostedFileSearch</key>
+	<true/>
+	<key>AIFeatureHostedWebSearch</key>
+	<true/>
+	<key>AIFeatureStreamingResponses</key>
+	<true/>
+	<key>AITermAPI</key>
+	<integer>2</integer>
+	<key>AIVectorStore</key>
+	<integer>0</integer>
 	<key>Actions</key>
 	<array/>
+	<key>AiMaxTokens</key>
+	<integer>400000</integer>
+	<key>AiModel</key>
+	<string>gpt-5.2</string>
+	<key>AiResponseMaxTokens</key>
+	<integer>128000</integer>
+	<key>AitermURL</key>
+	<string>https://api.openai.com/v1/responses</string>
 	<key>AlternateMouseScroll</key>
 	<true/>
 	<key>AlternateMouseScrollStringForDown</key>
@@ -25,6 +47,8 @@
 	<key>DisableFullscreenTransparency</key>
 	<false/>
 	<key>DoubleReportScrollWheel</key>
+	<false/>
+	<key>EnableAPIServer</key>
 	<false/>
 	<key>EnableDivisionView</key>
 	<true/>
@@ -56,6 +80,19 @@
 			<string></string>
 			<key>Text</key>
 			<string></string>
+			<key>Version</key>
+			<integer>1</integer>
+		</dict>
+		<key>0xd-0x20000-0x24</key>
+		<dict>
+			<key>Action</key>
+			<integer>12</integer>
+			<key>Keycode</key>
+			<integer>13</integer>
+			<key>Modifiers</key>
+			<integer>131072</integer>
+			<key>Text</key>
+			<string>\n</string>
 			<key>Version</key>
 			<integer>1</integer>
 		</dict>
@@ -113,6 +150,8 @@
 	<key>HorizontalScrollingSensitivity</key>
 	<real>0.10000000149011612</real>
 	<key>HotkeyMigratedFromSingleToMulti</key>
+	<true/>
+	<key>JiggleTTYSizeOnClearBuffer</key>
 	<true/>
 	<key>LeftCommand</key>
 	<integer>1</integer>
@@ -811,6 +850,8 @@
 			</dict>
 			<key>Left Option Key Changeable</key>
 			<false/>
+			<key>Load Shell Integration Automatically</key>
+			<true/>
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
@@ -829,6 +870,8 @@
 			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
+			<key>Prevent Opening in a Tab</key>
+			<true/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -901,6 +944,10 @@
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<false/>
+	<key>OpenArrangementAtStartup</key>
+	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>OptionIsMetaForSpecialChars</key>
 	<true/>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -942,6 +989,8 @@
 	</dict>
 	<key>Print In Black And White</key>
 	<true/>
+	<key>PromptOnQuit</key>
+	<false/>
 	<key>ProportionalScrollWheelReporting</key>
 	<false/>
 	<key>RemapModifiersWithoutEventTap</key>
