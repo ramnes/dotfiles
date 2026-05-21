@@ -16,6 +16,7 @@ function install {
 cd $(dirname $0)/..
 install bash/config.bash ~/.bashrc
 install bash/profile.bash ~/.bash_profile
+install bash/worktree.bash ~/.worktree.bash
 install bat ~/.config/bat/config
 install colordiff ~/.colordiffrc
 install contrib/background.jpg ~/.background.jpg

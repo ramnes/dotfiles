@@ -191,6 +191,8 @@ awsp() {
     fi
 }
 
+source-if-exists ~/.worktree.bash
+
 diff() {
     colordiff -Nu "$@" | diff-highlight
 }
