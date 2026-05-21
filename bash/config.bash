@@ -207,7 +207,7 @@ kt() {
 }
 
 q() {
-    shell-genie ask "$*"
+    claude -p "$*"
 }
 
 csv_pp() {
