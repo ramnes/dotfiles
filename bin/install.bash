@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function clean {
     echo $@ | xargs -p rm -rf
 }
@@ -6,11 +8,11 @@ function install {
     origin=$(pwd)/$1
     destination=$2
 
-    test $origin == $destination && return
-    test -L $destination && test $origin == $(readlink $destination) && return
-    test -e $(dirname $destination) || mkdir -vp $(dirname $destination)
-    test -e $destination || test -L $destination && clean $destination
-    test -e $destination || ln -vs $origin $destination
+    test "$origin" == "$destination" && return
+    test -L "$destination" && test "$origin" == "$(readlink "$destination")" && return
+    test -e "$(dirname "$destination")" || mkdir -vp "$(dirname "$destination")"
+    test -e "$destination" || test -L "$destination" && clean "$destination"
+    test -e "$destination" || ln -vs "$origin" "$destination"
 }
 
 cd $(dirname $0)/..
@@ -34,8 +36,8 @@ install contrib/spotify-dbus.bash ~/.local/bin/spotify-dbus
 install contrib/tm ~/.local/bin/tm
 install contrib/user-dirs.dirs ~/.config/user-dirs.dirs
 install curl ~/.curlrc
-install cursor/keybindings.json "~/Library/Application Support/Cursor/User/keybindings.json"
-install cursor/settings.json "~/Library/Application Support/Cursor/User/settings.json"
+install cursor/keybindings.json "$HOME/Library/Application Support/Cursor/User/keybindings.json"
+install cursor/settings.json "$HOME/Library/Application Support/Cursor/User/settings.json"
 install emacs ~/.emacs.d
 install gpg-agent ~/.gnupg/gpg-agent.conf
 install git/attributes ~/.gitattributes
