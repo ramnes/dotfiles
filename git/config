@@ -3,7 +3,7 @@
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 [user]
-	name = ramnes
+	name = Guillaume Gelin
 	email = contact@ramnes.eu
 	signingkey = 99CCA84E2C8C74F32E12AD538C1702070803487A
 [alias]
