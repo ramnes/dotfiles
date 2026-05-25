@@ -48,12 +48,18 @@ wt() {
     then
         wt="${_WT_PREV[$main]}"
         [[ -z "$wt" ]] && { echo "No previous worktree" >&2; return 1; }
+    elif [[ "$1" == "main" ]]
+    then
+        wt="$main"
     elif [[ -n "$1" ]]
     then
-        # Jump directly by worktree basename.
-        while read -r path _; do
-            [[ "${path##*/}" == "$1" ]] && { wt="$path"; break; }
+        # Fuzzy match by worktree basename or branch name.
+        local list="" branch
+        while read -r path _ branch; do
+            branch="${branch#[}"; branch="${branch%]}"
+            list+="${path##*/} $branch $path"$'\n'
         done < <(git worktree list)
+        wt=$(printf '%s' "$list" | fzf --filter "$1" --delimiter ' ' --nth 1,2 | head -1 | awk '{print $NF}')
         [[ -z "$wt" ]] && { echo "No worktree: $1" >&2; return 1; }
     else
         wt=$(git worktree list | fzf --height 40% --reverse \
