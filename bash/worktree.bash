@@ -62,9 +62,9 @@ wt() {
             | awk '{print $1}')
     fi
 
-    if [[ -n "$wt" ]]
-    then
-        _WT_PREV[$main]=$(pwd)
-        cd "$wt" && [[ "$wt" != "$main" ]] && _wt_copy_trust "$main" "$wt"
-    fi
+    [[ -z "$wt" ]] && return
+    _WT_PREV[$main]=$(pwd)
+    cd "$wt" || return
+    [[ "$wt" != "$main" ]] && _wt_copy_trust "$main" "$wt"
+    return 0
 }
