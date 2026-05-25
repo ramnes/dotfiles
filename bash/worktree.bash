@@ -64,7 +64,7 @@ wt() {
     else
         wt=$(git worktree list | fzf --height 40% --reverse \
             --header 'enter: cd  ctrl-d: remove' \
-            --bind 'ctrl-d:execute(read -n1 -p "Remove {1}? [y/N] " a; echo; [[ "$a" == "y" ]] && _wt_drop_trust {1} && git worktree remove {1})+reload(git worktree list)' \
+            --bind 'ctrl-d:execute(read -n1 -p "Remove {1}? [y/N] " a; echo; [[ "$a" == "y" ]] && _wt_drop_trust {1} && git worktree remove --force {1})+reload(git worktree list)' \
             | awk '{print $1}')
     fi
 
