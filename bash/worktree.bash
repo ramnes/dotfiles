@@ -38,9 +38,16 @@ _wt_drop_trust() {
     done < <(_wt_list_trusted "$1")
 }
 
-# Prompt, untrust, then force-remove a worktree.
+# Prompt, untrust, then force-remove a worktree. Refuses the main worktree.
+# Second arg, when set, pauses on the refusal so fzf's reload doesn't wipe the message.
 _wt_remove() {
-    local wt="$1" a
+    local wt="$1" pause="$2" a
+    if [[ "$wt" == "$(git worktree list | head -1 | awk '{print $1}')" ]]
+    then
+        echo "Cannot remove main worktree" >&2
+        [[ -n "$pause" ]] && sleep 2
+        return 1
+    fi
     read -n1 -p "Remove $wt? [y/N] " a; echo
     [[ "$a" != "y" ]] && return 1
     _wt_drop_trust "$wt"
@@ -68,7 +75,6 @@ wt() {
         [[ -z "$2" ]] && { echo "Usage: wt -D <name>" >&2; return 1; }
         wt=$(_wt_fuzzy "$2")
         [[ -z "$wt" ]] && { echo "No worktree: $2" >&2; return 1; }
-        [[ "$wt" == "$main" ]] && { echo "Cannot remove main worktree" >&2; return 1; }
         _wt_remove "$wt" || return
         [[ -d "$(pwd)" ]] || cd "$main"
         return
@@ -86,7 +92,7 @@ wt() {
     else
         wt=$(git worktree list | fzf --height 40% --reverse \
             --header 'enter: cd  ctrl-d: remove' \
-            --bind 'ctrl-d:execute(_wt_remove {1})+reload(git worktree list)' \
+            --bind 'ctrl-d:execute(_wt_remove {1} 1)+reload(git worktree list)' \
             | awk '{print $1}')
     fi
 
