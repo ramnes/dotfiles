@@ -76,8 +76,7 @@ wt() {
         wt=$(_wt_fuzzy "$2")
         [[ -z "$wt" ]] && { echo "No worktree: $2" >&2; return 1; }
         _wt_remove "$wt" || return
-        [[ -d "$(pwd)" ]] || cd "$main"
-        return
+        wt=""
     elif [[ "$1" == "-" ]]
     then
         wt="${_WT_PREV[$main]}"
@@ -96,7 +95,13 @@ wt() {
             | awk '{print $1}')
     fi
 
-    [[ -z "$wt" ]] && return
+    if [[ ! -d "$(pwd)" ]]
+    then
+        local fallback="${_WT_PREV[$main]}"
+        [[ -n "$fallback" && -d "$fallback" ]] && cd "$fallback" || cd "$main"
+    fi
+
+    [[ -z "$wt" ]] && return 0
     _WT_PREV[$main]=$(pwd)
     cd "$wt" || return
     [[ "$wt" != "$main" ]] && _wt_copy_trust "$main" "$wt"
