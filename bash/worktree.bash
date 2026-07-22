@@ -67,8 +67,9 @@ _wt_fuzzy() {
 
 wt() {
     git rev-parse --is-inside-work-tree > /dev/null || return
-    local main wt
+    local main wt subpath
     main=$(git worktree list | head -1 | awk '{print $1}')
+    subpath="${PWD#$(git rev-parse --show-toplevel)}"
 
     if [[ "$1" == "-D" ]]
     then
@@ -103,7 +104,15 @@ wt() {
 
     [[ -z "$wt" ]] && return 0
     _WT_PREV[$main]=$(pwd)
-    cd "$wt" || return
+    # Preserve current subpath when jumping to another worktree root.
+    local target="$wt" p
+    if [[ -n "$subpath" ]]
+    then
+        while read -r p _; do
+            [[ "$wt" == "$p" && -d "$wt$subpath" ]] && { target="$wt$subpath"; break; }
+        done < <(git worktree list)
+    fi
+    cd "$target" || return
     [[ "$wt" != "$main" ]] && _wt_copy_trust "$main" "$wt"
     return 0
 }
