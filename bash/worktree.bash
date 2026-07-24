@@ -55,6 +55,50 @@ _wt_remove() {
 }
 export -f _wt_list_trusted _wt_drop_trust _wt_remove
 
+# Colored dot: red if dirty, orange if unpushed, green if clean and pushed.
+_wt_status() {
+    local wt="$1" out ab
+    out=$(git -C "$wt" status --branch --porcelain=v2 --untracked-files=no 2>/dev/null)
+    if grep -q '^[^#]' <<< "$out"
+    then
+        printf '\033[31m●\033[0m'
+        return
+    fi
+    ab=$(awk '/^# branch\.ab / {print $3; exit}' <<< "$out")
+    if [[ "$ab" == "+0" ]]
+    then
+        printf '\033[32m●\033[0m'
+    elif [[ -n "$ab" ]]
+    then
+        printf '\033[33m●\033[0m'
+    elif git -C "$wt" branch -r --contains HEAD 2>/dev/null | grep -q .
+    then
+        printf '\033[32m●\033[0m'
+    else
+        printf '\033[33m●\033[0m'
+    fi
+}
+
+# git worktree list, each row prefixed with a colored status dot. Runs the
+# per-worktree status checks in parallel, then reassembles in order.
+_wt_colored_list() {
+    local p rest i=0 tmpdir
+    tmpdir=$(mktemp -d)
+    while read -r p rest; do
+        (
+            s=$(_wt_status "$p")
+            printf '%s %s %s\n' "$s" "$p" "$rest" > "$tmpdir/$i"
+        ) &
+        ((i++))
+    done < <(git worktree list)
+    wait
+    for ((j=0; j<i; j++)); do
+        cat "$tmpdir/$j" 2>/dev/null
+    done
+    rm -rf "$tmpdir"
+}
+export -f _wt_status _wt_colored_list
+
 # Fuzzy match a worktree by basename or branch name, print best-match path.
 _wt_fuzzy() {
     local list="" path _ branch
@@ -90,10 +134,10 @@ wt() {
         wt=$(_wt_fuzzy "$1")
         [[ -z "$wt" ]] && { echo "No worktree: $1" >&2; return 1; }
     else
-        wt=$(git worktree list | fzf --height 40% --reverse \
+        wt=$(_wt_colored_list | fzf --ansi --height 40% --reverse \
             --header 'enter: cd  ctrl-d: remove' \
-            --bind 'ctrl-d:execute(_wt_remove {1} 1)+reload(git worktree list)' \
-            | awk '{print $1}')
+            --bind 'ctrl-d:execute(_wt_remove {2})+reload(_wt_colored_list)' \
+            | awk '{print $2}')
     fi
 
     if [[ ! -d "$(pwd)" ]]
