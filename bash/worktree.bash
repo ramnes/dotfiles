@@ -60,7 +60,7 @@ export -f _wt_list_trusted _wt_drop_trust _wt_remove
 # Colored dot: red if dirty, orange if unpushed, green if clean and pushed.
 _wt_status() {
     local wt="$1" out ab
-    out=$(git -C "$wt" status --branch --porcelain=v2 --untracked-files=no 2>/dev/null)
+    out=$(git -C "$wt" status --branch --porcelain=v2 2>/dev/null)
     if grep -q '^[^#]' <<< "$out"
     then
         printf '\033[31m●\033[0m'
@@ -124,6 +124,13 @@ wt() {
         [[ -z "$wt" ]] && { echo "No worktree: $2" >&2; return 1; }
         _wt_remove "$wt" || return
         wt=""
+    elif [[ "$1" == "-A" ]]
+    then
+        # Create worktree at .claude/worktrees/<branch-with-slashes-as-plus>,
+        # (re)creating the branch from HEAD.
+        [[ -z "$2" ]] && { echo "Usage: wt -A <branch>" >&2; return 1; }
+        wt="$main/.claude/worktrees/${2//\//+}"
+        git worktree add "$wt" -B "$2" || return
     elif [[ "$1" == "-" ]]
     then
         wt="${_WT_PREV[$main]}"
