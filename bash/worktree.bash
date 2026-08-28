@@ -3,6 +3,8 @@
 
 # Previous worktree per repo, keyed by main worktree path.
 [[ -v _WT_PREV ]] || declare -gA _WT_PREV
+# Worktrees already trust-mirrored this session (avoid re-running _wt_copy_trust).
+[[ -v _WT_TRUSTED ]] || declare -gA _WT_TRUSTED
 
 # Emit each mise-trusted path under a given root.
 _wt_list_trusted() {
@@ -157,6 +159,10 @@ wt() {
         done < <(git worktree list)
     fi
     cd "$target" || return
-    [[ "$wt" != "$main" ]] && _wt_copy_trust "$main" "$wt"
+    if [[ "$wt" != "$main" && -z "${_WT_TRUSTED[$wt]:-}" ]]
+    then
+        _wt_copy_trust "$main" "$wt"
+        _WT_TRUSTED[$wt]=1
+    fi
     return 0
 }
