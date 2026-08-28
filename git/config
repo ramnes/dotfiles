@@ -27,6 +27,7 @@
 	default = current
 	followTags = true
 	recurseSubmodules = check
+	autoSetupRemote = true
 [clean]
 	requireForce = false
 [tag]
