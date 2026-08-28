@@ -23,6 +23,7 @@
 	st = fetch --prune origin +refs/tags/*:refs/tags/*
 	sup = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	root = rev-parse --show-toplevel
+	sync = "!if gh stack view --json >/dev/null 2>&1; then gh stack sync; else git fetch origin main && git rebase origin/main && git force; fi"
 [push]
 	default = current
 	followTags = true
