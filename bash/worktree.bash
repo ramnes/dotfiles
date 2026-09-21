@@ -1,46 +1,10 @@
 #!/bin/bash
-# Git worktree helpers, mirroring mise trust into worktrees.
+# Git worktree helpers.
 
 # Previous worktree per repo, keyed by main worktree path.
 [[ -v _WT_PREV ]] || declare -gA _WT_PREV
-# Worktrees already trust-mirrored this session (avoid re-running _wt_copy_trust).
-[[ -v _WT_TRUSTED ]] || declare -gA _WT_TRUSTED
 
-# Emit each mise-trusted path under a given root.
-_wt_list_trusted() {
-    local td="$HOME/.local/state/mise/trusted-configs" root="$1" link target
-    [[ -d "$td" ]] || return
-    for link in "$td"/*; do
-        target=$(readlink "$link") || continue
-        target="${target%/}"
-        case "$target" in
-            "$root"|"$root"/*) echo "$target";;
-        esac
-    done
-}
-
-# Mirror main-worktree trust into a destination worktree.
-_wt_copy_trust() {
-    local main="$1" dest="$2" target new
-    local -A trusted
-    while read -r target; do
-        trusted[$target]=1
-    done < <(_wt_list_trusted "$dest")
-    while read -r target; do
-        new="$dest${target#$main}"
-        [[ -e "$new" && -z "${trusted[$new]:-}" ]] && mise trust "$new" > /dev/null
-    done < <(_wt_list_trusted "$main")
-}
-
-# Untrust everything under a given worktree.
-_wt_drop_trust() {
-    local target
-    while read -r target; do
-        mise trust --untrust "$target" > /dev/null
-    done < <(_wt_list_trusted "$1")
-}
-
-# Prompt, untrust, then force-remove a worktree. Refuses the main worktree.
+# Prompt, then force-remove a worktree. Refuses the main worktree.
 # Second arg, when set, pauses on the refusal so fzf's reload doesn't wipe the message.
 _wt_remove() {
     local wt="$1" pause="$2" a
@@ -52,10 +16,9 @@ _wt_remove() {
     fi
     read -n1 -p "Remove $wt? [y/N] " a; echo
     [[ "$a" != "y" ]] && return 1
-    _wt_drop_trust "$wt"
     git worktree remove --force "$wt"
 }
-export -f _wt_list_trusted _wt_drop_trust _wt_remove
+export -f _wt_remove
 
 # Colored dot: red if dirty, orange if unpushed, green if clean and pushed.
 _wt_status() {
@@ -166,10 +129,5 @@ wt() {
         done < <(git worktree list)
     fi
     cd "$target" || return
-    if [[ "$wt" != "$main" && -z "${_WT_TRUSTED[$wt]:-}" ]]
-    then
-        _wt_copy_trust "$main" "$wt"
-        _WT_TRUSTED[$wt]=1
-    fi
     return 0
 }
