@@ -179,6 +179,7 @@ alias pytest='pytest --pdbcls=IPython.terminal.debugger:TerminalPdb'
 alias randpass='apg -MsNCL -m10'
 alias reactivate='deactivate; activate'
 alias reload='source ~/.bashrc'
+alias sed='sed --follow-symlinks'
 alias sudo='sudo -E '
 alias spacer="command spacer --after 30 -d' ' -p1"
 alias tf="terraform"
