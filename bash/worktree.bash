@@ -80,7 +80,11 @@ wt() {
     main=$(git worktree list | head -1 | awk '{print $1}')
     subpath="${PWD#$(git rev-parse --show-toplevel)}"
 
-    if [[ "$1" == "-D" ]]
+    if [[ "$1" == "-l" ]]
+    then
+        git worktree list
+        return 0
+    elif [[ "$1" == "-D" ]]
     then
         [[ -z "$2" ]] && { echo "Usage: wt -D <name>" >&2; return 1; }
         wt=$(_wt_fuzzy "$2")
