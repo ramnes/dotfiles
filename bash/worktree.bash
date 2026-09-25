@@ -7,7 +7,7 @@
 # Prompt, then force-remove a worktree. Refuses the main worktree.
 # Second arg, when set, pauses on the refusal so fzf's reload doesn't wipe the message.
 _wt_remove() {
-    local wt="$1" pause="$2" a
+    local wt="${1/#\~/$HOME}" pause="$2" a
     if [[ "$wt" == "$(git worktree list | head -1 | awk '{print $1}')" ]]
     then
         echo "Cannot remove main worktree" >&2
@@ -47,19 +47,19 @@ _wt_status() {
 # git worktree list, each row prefixed with a colored status dot. Runs the
 # per-worktree status checks in parallel, then reassembles in order.
 _wt_colored_list() {
-    local p rest i=0 tmpdir
+    local line i=0 tmpdir
     tmpdir=$(mktemp -d)
-    while read -r p rest; do
+    while IFS= read -r line; do
         (
-            s=$(_wt_status "$p")
-            printf '%s %s %s\n' "$s" "$p" "$rest" > "$tmpdir/$i"
+            s=$(_wt_status "${line%% *}")
+            printf '%s %s\n' "$s" "$line" > "$tmpdir/$i"
         ) &
         ((i++))
     done < <(git worktree list)
     wait
     for ((j=0; j<i; j++)); do
         cat "$tmpdir/$j" 2>/dev/null
-    done
+    done | sed -E -e 's/ [0-9a-f]{7,40} \[/ [/' -e "s|$HOME|~|"
     rm -rf "$tmpdir"
 }
 export -f _wt_status _wt_colored_list
@@ -114,6 +114,7 @@ wt() {
             --header 'enter: cd  ctrl-d: remove' \
             --bind 'ctrl-d:execute(_wt_remove {2})+reload(_wt_colored_list)' \
             | awk '{print $2}')
+        wt="${wt/#\~/$HOME}"
     fi
 
     if [[ ! -d "$(pwd)" ]]
