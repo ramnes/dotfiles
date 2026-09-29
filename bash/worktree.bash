@@ -110,7 +110,7 @@ wt() {
         wt=$(_wt_fuzzy "$1")
         [[ -z "$wt" ]] && { echo "No worktree: $1" >&2; return 1; }
     else
-        wt=$(_wt_colored_list | fzf --ansi --height 40% --reverse \
+        wt=$(_wt_colored_list | fzf --ansi --nth 3 --height 40% --reverse \
             --header 'enter: cd  ctrl-d: remove' \
             --bind 'ctrl-d:execute(_wt_remove {2})+reload(_wt_colored_list)' \
             | awk '{print $2}')
