@@ -30,4 +30,7 @@ ctrl - end : spotify next
 ctrl - pageup : osascript -e "set volume output volume (get output volume of (get volume settings) +10)"
 ctrl - pagedown : osascript -e "set volume output volume (get output volume of (get volume settings) -10)"
 
-f14 : pmset sleepnow
+# Scroll Lock: sleep on battery, otherwise lock and stay awake until unlocked
+f14 : pmset -g ps | grep -q "'Battery Power'" && pmset sleepnow || bash ${HOME}/.config/skhd/scripts/lock.sh
+# Shift + Scroll Lock: always lock and stay awake until unlocked
+shift - f14 : bash ${HOME}/.config/skhd/scripts/lock.sh
